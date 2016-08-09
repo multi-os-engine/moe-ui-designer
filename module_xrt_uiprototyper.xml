@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_xrt_uiprototyper" default="compile.module.xrt_uiprototyper">
+  <dirname property="module.xrt_uiprototyper.basedir" file="${ant.file.module_xrt_uiprototyper}"/>
+  
+  <property name="module.jdk.home.xrt_uiprototyper" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.xrt_uiprototyper" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.xrt_uiprototyper" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.xrt_uiprototyper" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="xrt_uiprototyper.output.dir" value="${module.xrt_uiprototyper.basedir}/out/production/xrt_UIPrototyper"/>
+  <property name="xrt_uiprototyper.testoutput.dir" value="${module.xrt_uiprototyper.basedir}/out/test/xrt_UIPrototyper"/>
+  
+  <path id="xrt_uiprototyper.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="xrt_uiprototyper.module.production.classpath">
+    <path refid="${module.jdk.classpath.xrt_uiprototyper}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="library.builder-model.classpath"/>
+  </path>
+  
+  <path id="xrt_uiprototyper.runtime.production.module.classpath">
+    <pathelement location="${xrt_uiprototyper.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="library.builder-model.classpath"/>
+  </path>
+  
+  <path id="xrt_uiprototyper.module.classpath">
+    <path refid="${module.jdk.classpath.xrt_uiprototyper}"/>
+    <pathelement location="${xrt_uiprototyper.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${sdk-common.testoutput.dir}"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="library.builder-model.classpath"/>
+  </path>
+  
+  <path id="xrt_uiprototyper.runtime.module.classpath">
+    <pathelement location="${xrt_uiprototyper.testoutput.dir}"/>
+    <pathelement location="${xrt_uiprototyper.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${sdk-common.testoutput.dir}"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="library.builder-model.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.xrt_uiprototyper">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.xrt_uiprototyper">
+    <patternset refid="excluded.from.module.xrt_uiprototyper"/>
+  </patternset>
+  
+  <path id="xrt_uiprototyper.module.sourcepath">
+    <dirset dir="${module.xrt_uiprototyper.basedir}">
+      <include name="src"/>
+      <include name="resources"/>
+    </dirset>
+  </path>
+  
+  <path id="xrt_uiprototyper.module.test.sourcepath">
+    <dirset dir="${module.xrt_uiprototyper.basedir}">
+      <include name="tests/testSrc"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.xrt_uiprototyper" depends="compile.module.xrt_uiprototyper.production,compile.module.xrt_uiprototyper.tests" description="Compile module xrt_UIPrototyper"/>
+  
+  <target name="compile.module.xrt_uiprototyper.production" depends="register.custom.compilers,compile.module.android-annotations,compile.module.layoutlib-api,compile.module.sdk-common,compile.module.sdklib" description="Compile module xrt_UIPrototyper; production classes">
+    <mkdir dir="${xrt_uiprototyper.output.dir}"/>
+    <javac2 destdir="${xrt_uiprototyper.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.xrt_uiprototyper}/javac">
+      <compilerarg line="${compiler.args.xrt_uiprototyper}"/>
+      <bootclasspath refid="xrt_uiprototyper.module.bootclasspath"/>
+      <classpath refid="xrt_uiprototyper.module.production.classpath"/>
+      <src refid="xrt_uiprototyper.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.xrt_uiprototyper"/>
+    </javac2>
+    
+    <copy todir="${xrt_uiprototyper.output.dir}">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.xrt_uiprototyper.basedir}/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.xrt_uiprototyper.tests" depends="register.custom.compilers,compile.module.xrt_uiprototyper.production" description="compile module xrt_UIPrototyper; test classes" unless="skip.tests">
+    <mkdir dir="${xrt_uiprototyper.testoutput.dir}"/>
+    <javac2 destdir="${xrt_uiprototyper.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.xrt_uiprototyper}/javac">
+      <compilerarg line="${compiler.args.xrt_uiprototyper}"/>
+      <bootclasspath refid="xrt_uiprototyper.module.bootclasspath"/>
+      <classpath refid="xrt_uiprototyper.module.classpath"/>
+      <src refid="xrt_uiprototyper.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.xrt_uiprototyper"/>
+    </javac2>
+    
+    <copy todir="${xrt_uiprototyper.testoutput.dir}">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/tests/testSrc">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.xrt_uiprototyper" description="cleanup module">
+    <delete dir="${xrt_uiprototyper.output.dir}"/>
+    <delete dir="${xrt_uiprototyper.testoutput.dir}"/>
+  </target>
+  
+  <property name="xrt_uiprototyper.plugin.path.jar" value="${module.xrt_uiprototyper.basedir}/xrt_UIPrototyper.zip"/>
+  
+  <!-- Build archive for plugin 'xrt_UIPrototyper' -->
+  <target name="plugin.build.jar.xrt_uiprototyper" depends="compile.module.xrt_uiprototyper" description="Build plugin archive for module &#39;xrt_UIPrototyper&#39;">
+    <property name="tmp.dir.xrt_uiprototyper" value="${module.xrt_uiprototyper.basedir}/../temp"/>
+    <mkdir dir="${tmp.dir.xrt_uiprototyper}"/>
+    <mkdir dir="${tmp.dir.xrt_uiprototyper}/lib"/>
+    <jar destfile="${tmp.dir.xrt_uiprototyper}/lib/xrt_UIPrototyper.jar" duplicate="preserve">
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/xrt_UIPrototyper"/>
+      <zipfileset file="${module.xrt_uiprototyper.basedir}/META-INF/plugin.xml" prefix="META-INF"/>
+      <manifest>
+        <attribute name="Created-By" value="IntelliJ IDEA"/>
+        <attribute name="Manifest-Version" value="1.0"/>
+      </manifest>
+    </jar>
+    <copy file="${module.xrt_uiprototyper.basedir}/lib/builder-model-1.1.0-rc1.jar" tofile="${tmp.dir.xrt_uiprototyper}/lib/builder-model-1.1.0-rc1.jar"/>
+    <zip destfile="${xrt_uiprototyper.plugin.path.jar}">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/../temp"/>
+    </zip>
+    <delete dir="${tmp.dir.xrt_uiprototyper}"/>
+  </target>
+</project>

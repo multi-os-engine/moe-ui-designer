@@ -1,0 +1,66 @@
+<idea-plugin version="2">
+  <id>org.moe.designer.ios</id>
+  <name>Multi-OS Engine Layout Editor for iOS Apps</name>
+  <version>1.0</version>
+  <vendor url="http://www.moe.com">MOE</vendor>
+
+  <description><![CDATA[
+     <h1>Multi-OS Engine Layout Editor for iOS Apps</h1><br>
+     <p>For developers who prefer to save a time by re-using existing code instead of writing a new one</p>
+    ]]></description>
+
+  <!--<change-notes><![CDATA[-->
+      <!--Add change notes here.<br>-->
+      <!--<em>most HTML tags may be used</em>-->
+    <!--]]>-->
+  <!--</change-notes>-->
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="139"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!--<toolWindow id="Prototyper Tool Window" anchor="right" factoryClass="DesignerToolWindow"/>-->
+    <!--<postStartupActivity implementation="SampleStartupActivity"></postStartupActivity>-->
+    <fileEditorProvider implementation="org.moe.designer.IXMLFileEditorProvider"></fileEditorProvider>
+    <fileTypeFactory implementation="org.moe.designer.ixml.IXmlFileTypeFactory"/>
+    <lang.parserDefinition language="IXML" implementationClass="org.moe.designer.ixml.IXmlParserDefinition"/>
+
+
+    <facetType implementation="org.moe.designer.android.AndroidFacetType" id="ios-facet"/>
+
+    <projectService serviceImplementation="org.moe.designer.gradle.ProjectBuilder"/>
+    <projectService serviceImplementation="org.moe.designer.actions.SegueDestinationController"/>
+    <projectService serviceImplementation="org.moe.designer.actions.InitialViewComptrollerService"/>
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>org.moe.designer.component.XRTProjectComponent</implementation-class>
+    </component>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+     Add your actions here
+    <!--<action id="designer.window.open" class="SampleStartupActivity" text="Open Designer Window"-->
+            <!--description="open designer window for prototyping">-->
+      <!--<add-to-group group-id="ToolsMenu" anchor="first"/>-->
+    <!--</action>-->
+    <action id="createIXMLFile" class="org.moe.designer.actions.IXmlFileCreationAction" text="Create iOS UI design..."
+            description=";create it">
+      <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+    </action>
+  </actions>
+
+</idea-plugin>

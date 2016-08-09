@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/lay_main"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="150dp"
+              style="@style/XOSDatePicker"/>
+
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="150dp"
+              style="@style/XOSMapKitView"/>
+
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:id="@+id/editText"
+            android:text="Enter Text"
+            style="@style/XOSTextField"/>
+
+    <RadioButton android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="20dp"
+                 style="@style/XOSSwitch"
+                 android:checked="true"/>
+
+    <RadioGroup
+            android:id="@+id/SegmentedControl"
+            android:layout_width="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            style="@style/XOSStepper_RadioGroup">
+
+        <RadioButton
+                android:id="@+id/SegmentedControlButton1"
+                style="@style/XOSStepper_RadioButton_Minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <RadioButton
+                android:id="@+id/SegmentedControlButton2"
+                style="@style/XOSStepper_RadioButton_Plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+</LinearLayout>

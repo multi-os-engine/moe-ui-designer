@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dvlib" default="compile.module.dvlib">
+  <dirname property="module.dvlib.basedir" file="${ant.file.module_dvlib}"/>
+  
+  <property name="module.jdk.home.dvlib" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dvlib" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dvlib" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dvlib" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="dvlib.output.dir" value="${module.dvlib.basedir}/../../out/production/dvlib"/>
+  <property name="dvlib.testoutput.dir" value="${module.dvlib.basedir}/../../out/test/dvlib"/>
+  
+  <path id="dvlib.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dvlib.module.production.classpath">
+    <path refid="${module.jdk.classpath.dvlib}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="dvlib.runtime.production.module.classpath">
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="dvlib.module.classpath">
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="${module.jdk.classpath.dvlib}"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="dvlib.runtime.module.classpath">
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dvlib">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dvlib">
+    <patternset refid="excluded.from.module.dvlib"/>
+  </patternset>
+  
+  <path id="dvlib.module.sourcepath">
+    <dirset dir="${module.dvlib.basedir}/../../dvlib">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dvlib" depends="compile.module.dvlib.production,compile.module.dvlib.tests" description="Compile module dvlib"/>
+  
+  <target name="compile.module.dvlib.production" depends="register.custom.compilers,compile.module.common,compile.module.android-annotations" description="Compile module dvlib; production classes">
+    <mkdir dir="${dvlib.output.dir}"/>
+    <javac2 destdir="${dvlib.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dvlib}/javac">
+      <compilerarg line="${compiler.args.dvlib}"/>
+      <bootclasspath refid="dvlib.module.bootclasspath"/>
+      <classpath refid="dvlib.module.production.classpath"/>
+      <src refid="dvlib.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dvlib"/>
+    </javac2>
+    
+    <copy todir="${dvlib.output.dir}">
+      <fileset dir="${module.dvlib.basedir}/../../dvlib/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dvlib.tests" depends="register.custom.compilers,compile.module.dvlib.production" description="compile module dvlib; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dvlib" description="cleanup module">
+    <delete dir="${dvlib.output.dir}"/>
+    <delete dir="${dvlib.testoutput.dir}"/>
+  </target>
+</project>

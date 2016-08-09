@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sdk-common" default="compile.module.sdk-common">
+  <dirname property="module.sdk-common.basedir" file="${ant.file.module_sdk-common}"/>
+  
+  <property name="module.jdk.home.sdk-common" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.sdk-common" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.sdk-common" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.sdk-common" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="sdk-common.output.dir" value="${module.sdk-common.basedir}/../out/production/sdk-common"/>
+  <property name="sdk-common.testoutput.dir" value="${module.sdk-common.basedir}/../out/test/sdk-common"/>
+  
+  <path id="sdk-common.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sdk-common.module.production.classpath">
+    <path refid="${module.jdk.classpath.sdk-common}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="sdk-common.runtime.production.module.classpath">
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.output.dir}"/>
+  </path>
+  
+  <path id="sdk-common.module.classpath">
+    <pathelement location="${sdk-common.output.dir}"/>
+    <path refid="${module.jdk.classpath.sdk-common}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="sdk-common.runtime.module.classpath">
+    <pathelement location="${sdk-common.testoutput.dir}"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sdk-common">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sdk-common">
+    <patternset refid="excluded.from.module.sdk-common"/>
+  </patternset>
+  
+  <path id="sdk-common.module.sourcepath">
+    <dirset dir="${module.sdk-common.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sdk-common" depends="compile.module.sdk-common.production,compile.module.sdk-common.tests" description="Compile module sdk-common"/>
+  
+  <target name="compile.module.sdk-common.production" depends="register.custom.compilers,compile.module.layoutlib-api,compile.module.common,compile.module.sdklib,compile.module.builder-model,compile.module.android-annotations" description="Compile module sdk-common; production classes">
+    <mkdir dir="${sdk-common.output.dir}"/>
+    <javac2 destdir="${sdk-common.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sdk-common}/javac">
+      <compilerarg line="${compiler.args.sdk-common}"/>
+      <bootclasspath refid="sdk-common.module.bootclasspath"/>
+      <classpath refid="sdk-common.module.production.classpath"/>
+      <src refid="sdk-common.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sdk-common"/>
+    </javac2>
+    
+    <copy todir="${sdk-common.output.dir}">
+      <fileset dir="${module.sdk-common.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sdk-common.tests" depends="register.custom.compilers,compile.module.sdk-common.production" description="compile module sdk-common; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sdk-common" description="cleanup module">
+    <delete dir="${sdk-common.output.dir}"/>
+    <delete dir="${sdk-common.testoutput.dir}"/>
+  </target>
+</project>

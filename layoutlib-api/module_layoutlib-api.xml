@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_layoutlib-api" default="compile.module.layoutlib-api">
+  <dirname property="module.layoutlib-api.basedir" file="${ant.file.module_layoutlib-api}"/>
+  
+  <property name="module.jdk.home.layoutlib-api" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.layoutlib-api" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.layoutlib-api" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.layoutlib-api" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="layoutlib-api.output.dir" value="${module.layoutlib-api.basedir}/../out/production/layoutlib-api"/>
+  <property name="layoutlib-api.testoutput.dir" value="${module.layoutlib-api.basedir}/../out/test/layoutlib-api"/>
+  
+  <path id="layoutlib-api.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="layoutlib-api.module.production.classpath">
+    <path refid="${module.jdk.classpath.layoutlib-api}"/>
+    <path refid="library.kxml2.classpath"/>
+  </path>
+  
+  <path id="layoutlib-api.runtime.production.module.classpath">
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+  </path>
+  
+  <path id="layoutlib-api.module.classpath">
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="${module.jdk.classpath.layoutlib-api}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+  </path>
+  
+  <path id="layoutlib-api.runtime.module.classpath">
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.layoutlib-api">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.layoutlib-api">
+    <patternset refid="excluded.from.module.layoutlib-api"/>
+  </patternset>
+  
+  <path id="layoutlib-api.module.sourcepath">
+    <dirset dir="${module.layoutlib-api.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.layoutlib-api" depends="compile.module.layoutlib-api.production,compile.module.layoutlib-api.tests" description="Compile module layoutlib-api"/>
+  
+  <target name="compile.module.layoutlib-api.production" depends="register.custom.compilers" description="Compile module layoutlib-api; production classes">
+    <mkdir dir="${layoutlib-api.output.dir}"/>
+    <javac2 destdir="${layoutlib-api.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.layoutlib-api}/javac">
+      <compilerarg line="${compiler.args.layoutlib-api}"/>
+      <bootclasspath refid="layoutlib-api.module.bootclasspath"/>
+      <classpath refid="layoutlib-api.module.production.classpath"/>
+      <src refid="layoutlib-api.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.layoutlib-api"/>
+    </javac2>
+    
+    <copy todir="${layoutlib-api.output.dir}">
+      <fileset dir="${module.layoutlib-api.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.layoutlib-api.tests" depends="register.custom.compilers,compile.module.layoutlib-api.production" description="compile module layoutlib-api; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.layoutlib-api" description="cleanup module">
+    <delete dir="${layoutlib-api.output.dir}"/>
+    <delete dir="${layoutlib-api.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<d:devices
+        xmlns:d="http://schemas.android.com/sdk/devices/2">
+    <!-- IPHONES SECTION-->
+    <d:device>
+        <d:name>iPhone 4S</d:name>
+        <d:id>Intel IPhone4S</d:id>
+        <d:manufacturer>Google</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.5</d:diagonal-length>
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>640</d:x-dimension>
+                    <d:y-dimension>960</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>326</d:xdpi>
+                <d:ydpi>326</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                ProximitySensor
+                LightSensor
+                Gyroscope
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="KiB">1953125</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>Apple A5</d:cpu>
+            <d:gpu>Apple SGX 543</d:gpu>
+            <d:abi>
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock></d:dock>
+            <d:power-type>battery</d:power-type>
+            <d:skin>intel_iphone4s</d:skin>
+        </d:hardware>
+        <d:software>
+            <d:api-level>19</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles></d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <d:gl-extensions>
+                GL_EXT_blend_minmax
+                GL_EXT_debug_label
+                GL_EXT_debug_marker
+                GL_EXT_discard_framebuffer
+                GL_EXT_map_buffer_range
+                GL_EXT_separate_shader_objects
+                GL_EXT_shader_texture_lod
+                GL_EXT_shadow_samplers
+                GL_EXT_sRGB
+                GL_EXT_texture_filter_anisotropic
+                GL_EXT_texture_rg
+                GL_EXT_texture_storage
+                GL_EXT_debug_marker
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_read_format
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_element_index_uint
+                GL_OES_fbo_render_mipmap
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>iPhone 5</d:name>
+        <d:id>Intel IPhone5</d:id>
+        <d:manufacturer>Google</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>4.0</d:diagonal-length>
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>640</d:x-dimension>
+                    <d:y-dimension>1136</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>326</d:xdpi>
+                <d:ydpi>326</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Barometer
+                Accelerometer
+                ProximitySensor
+                LightSensor
+                Gyroscope
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="KiB">1953125</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">16</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>Apple A8</d:cpu>
+            <d:gpu>Apple A8 GPU</d:gpu>
+            <d:abi>
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock></d:dock>
+            <d:power-type>battery</d:power-type>
+            <d:skin>intel_iphone5</d:skin>
+        </d:hardware>
+        <d:software>
+            <d:api-level>19</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles></d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <d:gl-extensions>
+                GL_EXT_blend_minmax
+                GL_EXT_color_buffer_half_float
+                GL_EXT_debug_label
+                GL_EXT_debug_marker
+                GL_EXT_discard_framebuffer
+                GL_EXT_map_buffer_range
+                GL_EXT_occlusion_query_boolean
+                GL_EXT_read_format_bgra
+                GL_EXT_separate_shader_objects
+                GL_EXT_shader_texture_lod
+                GL_EXT_shadow_samplers
+                GL_EXT_sRGB
+                GL_EXT_texture_filter_anisotropic
+                GL_EXT_texture_rg
+                GL_EXT_texture_storage
+                GL_EXT_debug_marker
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_read_format
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_element_index_uint
+                GL_OES_fbo_render_mipmap
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>iPhone 5S</d:name>
+        <d:id>Intel IPhone5S</d:id>
+        <d:manufacturer>Google</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>4.0</d:diagonal-length>
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>640</d:x-dimension>
+                    <d:y-dimension>1136</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>326</d:xdpi>
+                <d:ydpi>326</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Barometer
+                Accelerometer
+                ProximitySensor
+                LightSensor
+                Gyroscope
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="KiB">1953125</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">16</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>Apple A8</d:cpu>
+            <d:gpu>Apple A8 GPU</d:gpu>
+            <d:abi>
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock></d:dock>
+            <d:power-type>battery</d:power-type>
+            <d:skin>intel_iphone5s</d:skin>
+        </d:hardware>
+        <d:software>
+            <d:api-level>19</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles></d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <d:gl-extensions>
+                GL_EXT_blend_minmax
+                GL_EXT_color_buffer_half_float
+                GL_EXT_debug_label
+                GL_EXT_debug_marker
+                GL_EXT_discard_framebuffer
+                GL_EXT_map_buffer_range
+                GL_EXT_occlusion_query_boolean
+                GL_EXT_read_format_bgra
+                GL_EXT_separate_shader_objects
+                GL_EXT_shader_texture_lod
+                GL_EXT_shadow_samplers
+                GL_EXT_sRGB
+                GL_EXT_texture_filter_anisotropic
+                GL_EXT_texture_rg
+                GL_EXT_texture_storage
+                GL_EXT_debug_marker
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_read_format
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_element_index_uint
+                GL_OES_fbo_render_mipmap
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>iPhone 6</d:name>
+        <d:id>Intel IPhone6</d:id>
+        <d:manufacturer>Google</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>4.7</d:diagonal-length>
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>750</d:x-dimension>
+                    <d:y-dimension>1334</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>326</d:xdpi>
+                <d:ydpi>326</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Barometer
+                Accelerometer
+                ProximitySensor
+                LightSensor
+                Gyroscope
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="KiB">1953125</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">16</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>Apple A8</d:cpu>
+            <d:gpu>Apple A8 GPU</d:gpu>
+            <d:abi>
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock></d:dock>
+            <d:power-type>battery</d:power-type>
+            <d:skin>intel_iphone6</d:skin>
+        </d:hardware>
+        <d:software>
+            <d:api-level>19</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles></d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <d:gl-extensions>
+                GL_EXT_blend_minmax
+                GL_EXT_color_buffer_half_float
+                GL_EXT_debug_label
+                GL_EXT_debug_marker
+                GL_EXT_discard_framebuffer
+                GL_EXT_map_buffer_range
+                GL_EXT_occlusion_query_boolean
+                GL_EXT_read_format_bgra
+                GL_EXT_separate_shader_objects
+                GL_EXT_shader_texture_lod
+                GL_EXT_shadow_samplers
+                GL_EXT_sRGB
+                GL_EXT_texture_filter_anisotropic
+                GL_EXT_texture_rg
+                GL_EXT_texture_storage
+                GL_EXT_debug_marker
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_read_format
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_element_index_uint
+                GL_OES_fbo_render_mipmap
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>iPhone 6 Plus</d:name>
+        <d:id>Intel IPhone6Plus</d:id>
+        <d:manufacturer>Google</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>5.5</d:diagonal-length>
+                <d:pixel-density>400dpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1080</d:x-dimension>
+                    <d:y-dimension>1920</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>401</d:xdpi>
+                <d:ydpi>401</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Barometer
+                Accelerometer
+                ProximitySensor
+                LightSensor
+                Gyroscope
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="KiB">1953125</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">16</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>Apple A8</d:cpu>
+            <d:gpu>Apple A8 GPU</d:gpu>
+            <d:abi>
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock></d:dock>
+            <d:power-type>battery</d:power-type>
+            <d:skin>intel_iphone6Plus</d:skin>
+        </d:hardware>
+        <d:software>
+            <d:api-level>19</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles></d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <d:gl-extensions>
+                GL_EXT_blend_minmax
+                GL_EXT_color_buffer_half_float
+                GL_EXT_debug_label
+                GL_EXT_debug_marker
+                GL_EXT_discard_framebuffer
+                GL_EXT_map_buffer_range
+                GL_EXT_occlusion_query_boolean
+                GL_EXT_read_format_bgra
+                GL_EXT_separate_shader_objects
+                GL_EXT_shader_texture_lod
+                GL_EXT_shadow_samplers
+                GL_EXT_sRGB
+                GL_EXT_texture_filter_anisotropic
+                GL_EXT_texture_rg
+                GL_EXT_texture_storage
+                GL_EXT_debug_marker
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_read_format
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_element_index_uint
+                GL_OES_fbo_render_mipmap
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>iPad Air 2</d:name>
+        <d:id>Intel IPadAir2</d:id>
+        <d:manufacturer>Google</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>9.7</d:diagonal-length>
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1536</d:x-dimension>
+                    <d:y-dimension>2048</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>326</d:xdpi>
+                <d:ydpi>326</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Barometer
+                Accelerometer
+                ProximitySensor
+                LightSensor
+                Gyroscope
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="KiB">1953125</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">16</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>Apple A8</d:cpu>
+            <d:gpu>Apple A8 GPU</d:gpu>
+            <d:abi>
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock></d:dock>
+            <d:power-type>battery</d:power-type>
+            <d:skin>intel_ipadAir2</d:skin>
+        </d:hardware>
+        <d:software>
+            <d:api-level>19</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles></d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <d:gl-extensions>
+                GL_EXT_blend_minmax
+                GL_EXT_color_buffer_half_float
+                GL_EXT_debug_label
+                GL_EXT_debug_marker
+                GL_EXT_discard_framebuffer
+                GL_EXT_map_buffer_range
+                GL_EXT_occlusion_query_boolean
+                GL_EXT_read_format_bgra
+                GL_EXT_separate_shader_objects
+                GL_EXT_shader_texture_lod
+                GL_EXT_shadow_samplers
+                GL_EXT_sRGB
+                GL_EXT_texture_filter_anisotropic
+                GL_EXT_texture_rg
+                GL_EXT_texture_storage
+                GL_EXT_debug_marker
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_read_format
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_element_index_uint
+                GL_OES_fbo_render_mipmap
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+</d:devices>

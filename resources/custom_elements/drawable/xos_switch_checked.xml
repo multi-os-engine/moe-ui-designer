@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+                android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="#00CC33" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/xos_switch_thumb" android:left="18dp"/>
+</layer-list>

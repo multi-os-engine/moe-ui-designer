@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="xrt_uiprototyper" default="all">
+  
+  
+  <property file="build.properties"/>
+  <property environment="env"/>
+  <fail unless="env.JAVA_HOME" message="JAVA_HOME not set."/>
+  <fail unless="env.IDEA_HOME" message="IDEA_HOME not set."/>
+  <fail unless="env.ANDROID_HOME" message="ANDROID_HOME not set."/>
+  <echo message="JAVA_HOME ---> ${env.JAVA_HOME}"/>
+  <echo message="IDEA_HOME ---> ${env.IDEA_HOME}"/>
+  <echo message="ANDROID_HOME ---> ${env.ANDROID_HOME}"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.tox/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.ane"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.intellij_idea_iu-141.1010.3" value="${env.JAVA_HOME}/bin"/>
+  <path id="jdk.classpath.intellij_idea_iu-141.1010.3">
+    <fileset dir="${env.IDEA_HOME}">
+      <include name="lib/alloy.jar"/>
+      <include name="lib/annotations.jar"/>
+      <include name="lib/asm-all.jar"/>
+      <include name="lib/asm-commons.jar"/>
+      <include name="lib/asm-tree-3.0.jar"/>
+      <include name="lib/asm.jar"/>
+      <include name="lib/asm4-all.jar"/>
+      <include name="lib/automaton.jar"/>
+      <include name="lib/batik.jar"/>
+      <include name="lib/boot.jar"/>
+      <include name="lib/bootstrap.jar"/>
+      <include name="lib/cglib-2.2.2.jar"/>
+      <include name="lib/cli-parser-1.1.jar"/>
+      <include name="lib/commons-codec-1.8.jar"/>
+      <include name="lib/commons-httpclient-3.1-patched.jar"/>
+      <include name="lib/commons-logging-1.1.3.jar"/>
+      <include name="lib/commons-net-3.3.jar"/>
+      <include name="lib/ecj-4.4.jar"/>
+      <include name="lib/extensions.jar"/>
+      <include name="lib/fluent-hc-4.3.6.jar"/>
+      <include name="lib/forms_rt.jar"/>
+      <include name="lib/freemarker.jar"/>
+      <include name="lib/fxHelpBrowser.jar"/>
+      <include name="lib/groovy-all-2.3.9.jar"/>
+      <include name="lib/gson-2.3.jar"/>
+      <include name="lib/guava-17.0.jar"/>
+      <include name="lib/hamcrest-core-1.3.jar"/>
+      <include name="lib/hamcrest-library-1.3.jar"/>
+      <include name="lib/httpclient-4.3.6.jar"/>
+      <include name="lib/httpcore-4.3.3.jar"/>
+      <include name="lib/httpmime-4.3.6.jar"/>
+      <include name="lib/icons.jar"/>
+      <include name="lib/idea-jsp-openapi.jar"/>
+      <include name="lib/idea.jar"/>
+      <include name="lib/idea_rt.jar"/>
+      <include name="lib/ideax.jar"/>
+      <include name="lib/isorelax.jar"/>
+      <include name="lib/jasper21_rt.jar"/>
+      <include name="lib/jasper2_rt.jar"/>
+      <include name="lib/javac2.jar"/>
+      <include name="lib/jaxen-1.1.3.jar"/>
+      <include name="lib/jayatana-1.2.4.jar"/>
+      <include name="lib/jcip-annotations.jar"/>
+      <include name="lib/jdkAnnotations.jar"/>
+      <include name="lib/jdom.jar"/>
+      <include name="lib/jettison-1.3.2.jar"/>
+      <include name="lib/jgoodies-common-1.2.1.jar"/>
+      <include name="lib/jgoodies-forms.jar"/>
+      <include name="lib/jgoodies-looks-2.4.2.jar"/>
+      <include name="lib/jh.jar"/>
+      <include name="lib/jing.jar"/>
+      <include name="lib/jna-utils.jar"/>
+      <include name="lib/jna.jar"/>
+      <include name="lib/jps-launcher.jar"/>
+      <include name="lib/jps-model.jar"/>
+      <include name="lib/jps-server.jar"/>
+      <include name="lib/jsch-0.1.51.jar"/>
+      <include name="lib/jsch.agentproxy.connector-factory.jar"/>
+      <include name="lib/jsch.agentproxy.core.jar"/>
+      <include name="lib/jsch.agentproxy.pageant.jar"/>
+      <include name="lib/jsch.agentproxy.sshagent.jar"/>
+      <include name="lib/jsch.agentproxy.usocket-jna.jar"/>
+      <include name="lib/jsch.agentproxy.usocket-nc.jar"/>
+      <include name="lib/jsp-api.jar"/>
+      <include name="lib/jsr166e.jar"/>
+      <include name="lib/jsr173_1.0_api.jar"/>
+      <include name="lib/junit-4.11.jar"/>
+      <include name="lib/jzlib-1.1.1.jar"/>
+      <include name="lib/log4j.jar"/>
+      <include name="lib/markdown4j-2.2.jar"/>
+      <include name="lib/markdownj-core-0.4.2-SNAPSHOT.jar"/>
+      <include name="lib/microba.jar"/>
+      <include name="lib/miglayout-swing.jar"/>
+      <include name="lib/nanoxml-2.2.3.jar"/>
+      <include name="lib/nekohtml-1.9.14.jar"/>
+      <include name="lib/netty-all-4.1.0.Beta4.jar"/>
+      <include name="lib/openapi.jar"/>
+      <include name="lib/optimizedFileManager.jar"/>
+      <include name="lib/oromatcher.jar"/>
+      <include name="lib/picocontainer.jar"/>
+      <include name="lib/protobuf-2.5.0.jar"/>
+      <include name="lib/proxy-vole_20131209.jar"/>
+      <include name="lib/pty4j-0.4.15.jar"/>
+      <include name="lib/purejavacomm.jar"/>
+      <include name="lib/resolver.jar"/>
+      <include name="lib/resources.jar"/>
+      <include name="lib/resources_en.jar"/>
+      <include name="lib/rhino-js-1_7R4.jar"/>
+      <include name="lib/rngom-20051226-patched.jar"/>
+      <include name="lib/sanselan-0.98-snapshot.jar"/>
+      <include name="lib/serviceMessages.jar"/>
+      <include name="lib/servlet-api.jar"/>
+      <include name="lib/slf4j-api-1.7.10.jar"/>
+      <include name="lib/slf4j-log4j12-1.7.10.jar"/>
+      <include name="lib/snappy-in-java-0.3.1.jar"/>
+      <include name="lib/swingx-core-1.6.2.jar"/>
+      <include name="lib/trang-core.jar"/>
+      <include name="lib/trove4j.jar"/>
+      <include name="lib/trove4j_src.jar"/>
+      <include name="lib/util.jar"/>
+      <include name="lib/velocity.jar"/>
+      <include name="lib/winp-1.21-patched.jar"/>
+      <include name="lib/xbean.jar"/>
+      <include name="lib/xerces.jar"/>
+      <include name="lib/xml-apis.jar"/>
+      <include name="lib/xmlrpc-2.0.jar"/>
+      <include name="lib/xpp3-1.1.4-min.jar"/>
+      <include name="lib/xstream-1.4.3.jar"/>
+      <include name="lib/yjp-controller-api-redist.jar"/>
+      <include name="plugins/JavaEE/lib/gradle-javaee.jar"/>
+      <include name="plugins/JavaEE/lib/IntelliLang-javaee.jar"/>
+      <include name="plugins/JavaEE/lib/javaee-openapi.jar"/>
+      <include name="plugins/JavaEE/lib/resources_en.jar"/>
+      <include name="plugins/PersistenceSupport/lib/persistence-openapi.jar"/>
+      <include name="plugins/PersistenceSupport/lib/resources_en.jar"/>
+      <include name="plugins/DatabaseTools/lib/database-openapi.jar"/>
+      <include name="plugins/DatabaseTools/lib/jdba.jar"/>
+      <include name="plugins/DatabaseTools/lib/resources_en.jar"/>
+      <include name="plugins/CSS/lib/css-openapi.jar"/>
+      <include name="plugins/CSS/lib/resources_en.jar"/>
+      <include name="plugins/uml/lib/diagram-api.jar"/>
+      <include name="plugins/Spring/lib/spring-aop.jar"/>
+      <include name="plugins/Spring/lib/spring-api.jar"/>
+      <include name="plugins/Spring/lib/spring-eclipse.jar"/>
+      <include name="plugins/Spring/lib/spring-web.jar"/>
+    </fileset>
+    <fileset dir="${env.JAVA_HOME}">
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-doclet.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/htmlconverter.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxrt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+    </fileset>
+    <fileset dir="${env.ANDROID_HOME}">
+      <include name="platforms/android-22/data/icu4j.jar"/>
+      <include name="platforms/android-22/data/layoutlib.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.intellij_idea_iu-141.1010.3}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.intellij_idea_iu-141.1010.3}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.intellij_idea_iu-141.1010.3"/>
+  <property name="ant.build.javac.source" value="1.6"/>
+  <property name="ant.build.javac.target" value="1.6"/>  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.builder-model.classpath">
+    <pathelement location="${basedir}/lib/builder-model-1.1.0-rc1.jar"/>
+  </path>
+  
+  <path id="library.commons-compress.classpath">
+    <pathelement location="${basedir}/lib/commons-compress-1.0.jar"/>
+  </path>
+  
+  <path id="library.freemarker.classpath">
+    <pathelement location="${basedir}/lib/freemarker-2.3.20.jar"/>
+  </path>
+  
+  <path id="library.gradle-tooling.classpath">
+    <pathelement location="${basedir}/lib/gradle/gradle-tooling-api-2.2.jar"/>
+  </path>
+  
+  <path id="library.jarutils.classpath">
+    <pathelement location="${basedir}/lib/jarutils.jar"/>
+  </path>
+  
+  <path id="library.junit3.classpath">
+    <pathelement location="${basedir}/lib/junit.jar"/>
+  </path>
+  
+  <path id="library.kxml2.classpath">
+    <pathelement location="${basedir}/lib/kxml2-2.3.0.jar"/>
+  </path>
+  
+  <path id="library.lombok.classpath">
+    <pathelement location="${basedir}/lib/lombok-ast-0.2.3.jar"/>
+  </path>
+  
+  <path id="library.mockito.classpath">
+    <pathelement location="${basedir}/lib/mockito-all-1.9.5.jar"/>
+  </path>
+  
+  <path id="library.netty.classpath">
+    <pathelement location="${basedir}/lib/netty-all-4.1.0.Beta4.jar"/>
+  </path>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module android-annotations -->
+  
+  <dirname property="module.android-annotations.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.android-annotations" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.android-annotations" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.android-annotations" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.android-annotations" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="android-annotations.output.dir" value="${module.android-annotations.basedir}/out/production/android-annotations"/>
+  <property name="android-annotations.testoutput.dir" value="${module.android-annotations.basedir}/out/test/android-annotations"/>
+  
+  <path id="android-annotations.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="android-annotations.module.production.classpath">
+    <path refid="${module.jdk.classpath.android-annotations}"/>
+  </path>
+  
+  <path id="android-annotations.runtime.production.module.classpath">
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="android-annotations.module.classpath">
+    <path refid="${module.jdk.classpath.android-annotations}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="android-annotations.runtime.module.classpath">
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.android-annotations">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.android-annotations">
+    <patternset refid="excluded.from.module.android-annotations"/>
+  </patternset>
+  
+  <path id="android-annotations.module.sourcepath">
+    <dirset dir="${module.android-annotations.basedir}/annotations">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.android-annotations" depends="compile.module.android-annotations.production,compile.module.android-annotations.tests" description="Compile module android-annotations"/>
+  
+  <target name="compile.module.android-annotations.production" description="Compile module android-annotations; production classes">
+    <mkdir dir="${android-annotations.output.dir}"/>
+    <javac destdir="${android-annotations.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.android-annotations}/javac">
+      <compilerarg line="${compiler.args.android-annotations}"/>
+      <bootclasspath refid="android-annotations.module.bootclasspath"/>
+      <classpath refid="android-annotations.module.production.classpath"/>
+      <src refid="android-annotations.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.android-annotations"/>
+    </javac>
+    
+    <copy todir="${android-annotations.output.dir}">
+      <fileset dir="${module.android-annotations.basedir}/annotations/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.android-annotations.tests" depends="compile.module.android-annotations.production" description="compile module android-annotations; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.android-annotations" description="cleanup module">
+    <delete dir="${android-annotations.output.dir}"/>
+    <delete dir="${android-annotations.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module layoutlib-api -->
+  
+  <dirname property="module.layoutlib-api.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.layoutlib-api" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.layoutlib-api" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.layoutlib-api" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.layoutlib-api" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="layoutlib-api.output.dir" value="${module.layoutlib-api.basedir}/out/production/layoutlib-api"/>
+  <property name="layoutlib-api.testoutput.dir" value="${module.layoutlib-api.basedir}/out/test/layoutlib-api"/>
+  
+  <path id="layoutlib-api.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="layoutlib-api.module.production.classpath">
+    <path refid="${module.jdk.classpath.layoutlib-api}"/>
+    <path refid="library.kxml2.classpath"/>
+  </path>
+  
+  <path id="layoutlib-api.runtime.production.module.classpath">
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+  </path>
+  
+  <path id="layoutlib-api.module.classpath">
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="${module.jdk.classpath.layoutlib-api}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+  </path>
+  
+  <path id="layoutlib-api.runtime.module.classpath">
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.layoutlib-api">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.layoutlib-api">
+    <patternset refid="excluded.from.module.layoutlib-api"/>
+  </patternset>
+  
+  <path id="layoutlib-api.module.sourcepath">
+    <dirset dir="${module.layoutlib-api.basedir}/layoutlib-api">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.layoutlib-api" depends="compile.module.layoutlib-api.production,compile.module.layoutlib-api.tests" description="Compile module layoutlib-api"/>
+  
+  <target name="compile.module.layoutlib-api.production" description="Compile module layoutlib-api; production classes">
+    <mkdir dir="${layoutlib-api.output.dir}"/>
+    <javac destdir="${layoutlib-api.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.layoutlib-api}/javac">
+      <compilerarg line="${compiler.args.layoutlib-api}"/>
+      <bootclasspath refid="layoutlib-api.module.bootclasspath"/>
+      <classpath refid="layoutlib-api.module.production.classpath"/>
+      <src refid="layoutlib-api.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.layoutlib-api"/>
+    </javac>
+    
+    <copy todir="${layoutlib-api.output.dir}">
+      <fileset dir="${module.layoutlib-api.basedir}/layoutlib-api/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.layoutlib-api.tests" depends="compile.module.layoutlib-api.production" description="compile module layoutlib-api; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.layoutlib-api" description="cleanup module">
+    <delete dir="${layoutlib-api.output.dir}"/>
+    <delete dir="${layoutlib-api.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module builder-model -->
+  
+  <dirname property="module.builder-model.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.builder-model" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.builder-model" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.builder-model" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.builder-model" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="builder-model.output.dir" value="${module.builder-model.basedir}/out/production/builder-model"/>
+  <property name="builder-model.testoutput.dir" value="${module.builder-model.basedir}/out/test/builder-model"/>
+  
+  <path id="builder-model.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="builder-model.module.production.classpath">
+    <path refid="${module.jdk.classpath.builder-model}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="builder-model.runtime.production.module.classpath">
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="android-annotations.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="builder-model.module.classpath">
+    <path refid="${module.jdk.classpath.builder-model}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="builder-model.runtime.module.classpath">
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="android-annotations.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.builder-model">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.builder-model">
+    <patternset refid="excluded.from.module.builder-model"/>
+  </patternset>
+  
+  <path id="builder-model.module.sourcepath">
+    <dirset dir="${module.builder-model.basedir}/builder-model">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.builder-model" depends="compile.module.builder-model.production,compile.module.builder-model.tests" description="Compile module builder-model"/>
+  
+  <target name="compile.module.builder-model.production" depends="compile.module.android-annotations" description="Compile module builder-model; production classes">
+    <mkdir dir="${builder-model.output.dir}"/>
+    <javac destdir="${builder-model.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.builder-model}/javac">
+      <compilerarg line="${compiler.args.builder-model}"/>
+      <bootclasspath refid="builder-model.module.bootclasspath"/>
+      <classpath refid="builder-model.module.production.classpath"/>
+      <src refid="builder-model.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.builder-model"/>
+    </javac>
+    
+    <copy todir="${builder-model.output.dir}">
+      <fileset dir="${module.builder-model.basedir}/builder-model/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.builder-model.tests" depends="compile.module.builder-model.production" description="compile module builder-model; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.builder-model" description="cleanup module">
+    <delete dir="${builder-model.output.dir}"/>
+    <delete dir="${builder-model.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module common -->
+  
+  <dirname property="module.common.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.common" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.common" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.common" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.common" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="common.output.dir" value="${module.common.basedir}/out/production/common"/>
+  <property name="common.testoutput.dir" value="${module.common.basedir}/out/test/common"/>
+  
+  <path id="common.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="common.module.production.classpath">
+    <path refid="${module.jdk.classpath.common}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="common.runtime.production.module.classpath">
+    <pathelement location="${common.output.dir}"/>
+    <path refid="android-annotations.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="common.module.classpath">
+    <pathelement location="${common.output.dir}"/>
+    <path refid="${module.jdk.classpath.common}"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="common.runtime.module.classpath">
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <path refid="library.junit3.classpath"/>
+    <path refid="android-annotations.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.common">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.common">
+    <patternset refid="excluded.from.module.common"/>
+  </patternset>
+  
+  <path id="common.module.sourcepath">
+    <dirset dir="${module.common.basedir}/common">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.common" depends="compile.module.common.production,compile.module.common.tests" description="Compile module common"/>
+  
+  <target name="compile.module.common.production" depends="compile.module.android-annotations" description="Compile module common; production classes">
+    <mkdir dir="${common.output.dir}"/>
+    <javac destdir="${common.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.common}/javac">
+      <compilerarg line="${compiler.args.common}"/>
+      <bootclasspath refid="common.module.bootclasspath"/>
+      <classpath refid="common.module.production.classpath"/>
+      <src refid="common.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.common"/>
+    </javac>
+    
+    <copy todir="${common.output.dir}">
+      <fileset dir="${module.common.basedir}/common/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.common.tests" depends="compile.module.common.production" description="compile module common; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.common" description="cleanup module">
+    <delete dir="${common.output.dir}"/>
+    <delete dir="${common.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module dvlib -->
+  
+  <dirname property="module.dvlib.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.dvlib" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dvlib" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dvlib" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dvlib" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="dvlib.output.dir" value="${module.dvlib.basedir}/out/production/dvlib"/>
+  <property name="dvlib.testoutput.dir" value="${module.dvlib.basedir}/out/test/dvlib"/>
+  
+  <path id="dvlib.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dvlib.module.production.classpath">
+    <path refid="${module.jdk.classpath.dvlib}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="dvlib.runtime.production.module.classpath">
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="common.runtime.production.module.classpath"/>
+    <path refid="android-annotations.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="dvlib.module.classpath">
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="${module.jdk.classpath.dvlib}"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="dvlib.runtime.module.classpath">
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.junit3.classpath"/>
+    <path refid="common.runtime.module.classpath"/>
+    <path refid="android-annotations.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dvlib">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dvlib">
+    <patternset refid="excluded.from.module.dvlib"/>
+  </patternset>
+  
+  <path id="dvlib.module.sourcepath">
+    <dirset dir="${module.dvlib.basedir}/dvlib">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dvlib" depends="compile.module.dvlib.production,compile.module.dvlib.tests" description="Compile module dvlib"/>
+  
+  <target name="compile.module.dvlib.production" depends="compile.module.common,compile.module.android-annotations" description="Compile module dvlib; production classes">
+    <mkdir dir="${dvlib.output.dir}"/>
+    <javac destdir="${dvlib.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dvlib}/javac">
+      <compilerarg line="${compiler.args.dvlib}"/>
+      <bootclasspath refid="dvlib.module.bootclasspath"/>
+      <classpath refid="dvlib.module.production.classpath"/>
+      <src refid="dvlib.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dvlib"/>
+    </javac>
+    
+    <copy todir="${dvlib.output.dir}">
+      <fileset dir="${module.dvlib.basedir}/dvlib/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dvlib.tests" depends="compile.module.dvlib.production" description="compile module dvlib; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dvlib" description="cleanup module">
+    <delete dir="${dvlib.output.dir}"/>
+    <delete dir="${dvlib.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module sdklib -->
+  
+  <dirname property="module.sdklib.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.sdklib" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.sdklib" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.sdklib" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.sdklib" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="sdklib.output.dir" value="${module.sdklib.basedir}/out/production/sdklib"/>
+  <property name="sdklib.testoutput.dir" value="${module.sdklib.basedir}/out/test/sdklib"/>
+  
+  <path id="sdklib.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sdklib.module.production.classpath">
+    <path refid="${module.jdk.classpath.sdklib}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="sdklib.runtime.production.module.classpath">
+    <pathelement location="${sdklib.output.dir}"/>
+    <path refid="common.runtime.production.module.classpath"/>
+    <path refid="dvlib.runtime.production.module.classpath"/>
+    <path refid="layoutlib-api.runtime.production.module.classpath"/>
+    <path refid="library.commons-compress.classpath"/>
+    <path refid="android-annotations.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="sdklib.module.classpath">
+    <pathelement location="${sdklib.output.dir}"/>
+    <path refid="${module.jdk.classpath.sdklib}"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="sdklib.runtime.module.classpath">
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <path refid="common.runtime.module.classpath"/>
+    <path refid="dvlib.runtime.module.classpath"/>
+    <path refid="layoutlib-api.runtime.module.classpath"/>
+    <path refid="library.commons-compress.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <path refid="android-annotations.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sdklib">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sdklib">
+    <patternset refid="excluded.from.module.sdklib"/>
+  </patternset>
+  
+  <path id="sdklib.module.sourcepath">
+    <dirset dir="${module.sdklib.basedir}/sdklib">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sdklib" depends="compile.module.sdklib.production,compile.module.sdklib.tests" description="Compile module sdklib"/>
+  
+  <target name="compile.module.sdklib.production" depends="compile.module.common,compile.module.dvlib,compile.module.layoutlib-api,compile.module.android-annotations" description="Compile module sdklib; production classes">
+    <mkdir dir="${sdklib.output.dir}"/>
+    <javac destdir="${sdklib.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sdklib}/javac">
+      <compilerarg line="${compiler.args.sdklib}"/>
+      <bootclasspath refid="sdklib.module.bootclasspath"/>
+      <classpath refid="sdklib.module.production.classpath"/>
+      <src refid="sdklib.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sdklib"/>
+    </javac>
+    
+    <copy todir="${sdklib.output.dir}">
+      <fileset dir="${module.sdklib.basedir}/sdklib/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sdklib.tests" depends="compile.module.sdklib.production" description="compile module sdklib; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sdklib" description="cleanup module">
+    <delete dir="${sdklib.output.dir}"/>
+    <delete dir="${sdklib.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module sdk-common -->
+  
+  <dirname property="module.sdk-common.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.sdk-common" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.sdk-common" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.sdk-common" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.sdk-common" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="sdk-common.output.dir" value="${module.sdk-common.basedir}/out/production/sdk-common"/>
+  <property name="sdk-common.testoutput.dir" value="${module.sdk-common.basedir}/out/test/sdk-common"/>
+  
+  <path id="sdk-common.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sdk-common.module.production.classpath">
+    <path refid="${module.jdk.classpath.sdk-common}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="sdk-common.runtime.production.module.classpath">
+    <pathelement location="${sdk-common.output.dir}"/>
+    <path refid="layoutlib-api.runtime.production.module.classpath"/>
+    <path refid="common.runtime.production.module.classpath"/>
+    <path refid="sdklib.runtime.production.module.classpath"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="builder-model.runtime.production.module.classpath"/>
+    <path refid="android-annotations.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="sdk-common.module.classpath">
+    <pathelement location="${sdk-common.output.dir}"/>
+    <path refid="${module.jdk.classpath.sdk-common}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <path refid="library.mockito.classpath"/>
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="sdk-common.runtime.module.classpath">
+    <pathelement location="${sdk-common.testoutput.dir}"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <path refid="layoutlib-api.runtime.module.classpath"/>
+    <path refid="common.runtime.module.classpath"/>
+    <path refid="sdklib.runtime.module.classpath"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <path refid="library.mockito.classpath"/>
+    <path refid="builder-model.runtime.module.classpath"/>
+    <path refid="android-annotations.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sdk-common">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sdk-common">
+    <patternset refid="excluded.from.module.sdk-common"/>
+  </patternset>
+  
+  <path id="sdk-common.module.sourcepath">
+    <dirset dir="${module.sdk-common.basedir}/sdk-common">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sdk-common" depends="compile.module.sdk-common.production,compile.module.sdk-common.tests" description="Compile module sdk-common"/>
+  
+  <target name="compile.module.sdk-common.production" depends="compile.module.layoutlib-api,compile.module.common,compile.module.sdklib,compile.module.builder-model,compile.module.android-annotations" description="Compile module sdk-common; production classes">
+    <mkdir dir="${sdk-common.output.dir}"/>
+    <javac destdir="${sdk-common.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sdk-common}/javac">
+      <compilerarg line="${compiler.args.sdk-common}"/>
+      <bootclasspath refid="sdk-common.module.bootclasspath"/>
+      <classpath refid="sdk-common.module.production.classpath"/>
+      <src refid="sdk-common.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sdk-common"/>
+    </javac>
+    
+    <copy todir="${sdk-common.output.dir}">
+      <fileset dir="${module.sdk-common.basedir}/sdk-common/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sdk-common.tests" depends="compile.module.sdk-common.production" description="compile module sdk-common; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sdk-common" description="cleanup module">
+    <delete dir="${sdk-common.output.dir}"/>
+    <delete dir="${sdk-common.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module UIPrototyper -->
+  
+  <dirname property="module.xrt_uiprototyper.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.xrt_uiprototyper" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.xrt_uiprototyper" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.xrt_uiprototyper" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.xrt_uiprototyper" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="xrt_uiprototyper.output.dir" value="${module.xrt_uiprototyper.basedir}/out/production/xrt_UIPrototyper"/>
+  <property name="xrt_uiprototyper.testoutput.dir" value="${module.xrt_uiprototyper.basedir}/out/test/xrt_UIPrototyper"/>
+  
+  <path id="xrt_uiprototyper.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="xrt_uiprototyper.module.production.classpath">
+    <path refid="${module.jdk.classpath.xrt_uiprototyper}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="library.builder-model.classpath"/>
+    <path refid="library.gradle-tooling.classpath"/>
+    <path refid="library.freemarker.classpath"/>
+    <path refid="library.jarutils.classpath"/>
+    <path refid="library.lombok.classpath"/>
+    <path refid="library.netty.classpath"/>
+    <pathelement location="${env.IDEA_HOME}/lib/forms_rt.jar"/>
+  </path>
+  
+  <path id="xrt_uiprototyper.runtime.production.module.classpath">
+    <pathelement location="${xrt_uiprototyper.output.dir}"/>
+    <path refid="android-annotations.runtime.production.module.classpath"/>
+    <path refid="layoutlib-api.runtime.production.module.classpath"/>
+    <path refid="sdk-common.runtime.production.module.classpath"/>
+    <path refid="sdklib.runtime.production.module.classpath"/>
+    <path refid="library.builder-model.classpath"/>
+    <path refid="library.gradle-tooling.classpath"/>
+    <path refid="library.freemarker.classpath"/>
+    <path refid="library.jarutils.classpath"/>
+    <path refid="library.lombok.classpath"/>
+    <path refid="library.netty.classpath"/>
+    <pathelement location="${env.IDEA_HOME}/lib/forms_rt.jar"/>
+  </path>
+  
+  <path id="xrt_uiprototyper.module.classpath">
+    <path refid="${module.jdk.classpath.xrt_uiprototyper}"/>
+    <pathelement location="${xrt_uiprototyper.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+    <pathelement location="${layoutlib-api.testoutput.dir}"/>
+    <pathelement location="${layoutlib-api.output.dir}"/>
+    <path refid="library.kxml2.classpath"/>
+    <path refid="library.junit3.classpath"/>
+    <pathelement location="${sdk-common.testoutput.dir}"/>
+    <pathelement location="${sdk-common.output.dir}"/>
+    <pathelement location="${common.testoutput.dir}"/>
+    <pathelement location="${common.output.dir}"/>
+    <pathelement location="${sdklib.testoutput.dir}"/>
+    <pathelement location="${sdklib.output.dir}"/>
+    <pathelement location="${dvlib.testoutput.dir}"/>
+    <pathelement location="${dvlib.output.dir}"/>
+    <path refid="library.commons-compress.classpath"/>
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <path refid="library.builder-model.classpath"/>
+    <path refid="library.gradle-tooling.classpath"/>
+    <path refid="library.freemarker.classpath"/>
+    <path refid="library.jarutils.classpath"/>
+    <path refid="library.lombok.classpath"/>
+    <path refid="library.netty.classpath"/>
+    <pathelement location="${env.IDEA_HOME}/lib/forms_rt.jar"/>
+  </path>
+  
+  <path id="xrt_uiprototyper.runtime.module.classpath">
+    <pathelement location="${xrt_uiprototyper.testoutput.dir}"/>
+    <pathelement location="${xrt_uiprototyper.output.dir}"/>
+    <path refid="android-annotations.runtime.module.classpath"/>
+    <path refid="layoutlib-api.runtime.module.classpath"/>
+    <path refid="sdk-common.runtime.module.classpath"/>
+    <path refid="sdklib.runtime.module.classpath"/>
+    <path refid="library.builder-model.classpath"/>
+    <path refid="library.gradle-tooling.classpath"/>
+    <path refid="library.freemarker.classpath"/>
+    <path refid="library.jarutils.classpath"/>
+    <path refid="library.lombok.classpath"/>
+    <path refid="library.netty.classpath"/>
+    <pathelement location="${env.IDEA_HOME}/lib/forms_rt.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.xrt_uiprototyper">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.xrt_uiprototyper">
+    <patternset refid="excluded.from.module.xrt_uiprototyper"/>
+  </patternset>
+  
+  <path id="xrt_uiprototyper.module.sourcepath">
+    <dirset dir="${module.xrt_uiprototyper.basedir}">
+      <include name="src"/>
+      <include name="resources"/>
+    </dirset>
+  </path>
+  
+  <path id="xrt_uiprototyper.module.test.sourcepath">
+    <dirset dir="${module.xrt_uiprototyper.basedir}">
+      <include name="tests/testSrc"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.xrt_uiprototyper" depends="compile.module.xrt_uiprototyper.production,compile.module.xrt_uiprototyper.tests" description="Compile module xrt_UIPrototyper"/>
+  
+  <target name="compile.module.xrt_uiprototyper.production" depends="compile.module.android-annotations,compile.module.layoutlib-api,compile.module.sdk-common,compile.module.sdklib" description="Compile module xrt_UIPrototyper; production classes">
+    <mkdir dir="${xrt_uiprototyper.output.dir}"/>
+    <javac destdir="${xrt_uiprototyper.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.xrt_uiprototyper}/javac">
+      <compilerarg line="${compiler.args.xrt_uiprototyper}"/>
+      <bootclasspath refid="xrt_uiprototyper.module.bootclasspath"/>
+      <classpath refid="xrt_uiprototyper.module.production.classpath"/>
+      <src refid="xrt_uiprototyper.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.xrt_uiprototyper"/>
+    </javac>
+    
+    <copy todir="${xrt_uiprototyper.output.dir}">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.xrt_uiprototyper.basedir}/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.xrt_uiprototyper.tests" depends="compile.module.xrt_uiprototyper.production" description="compile module xrt_UIPrototyper; test classes" unless="skip.tests">
+    <mkdir dir="${xrt_uiprototyper.testoutput.dir}"/>
+    <javac destdir="${xrt_uiprototyper.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.xrt_uiprototyper}/javac">
+      <compilerarg line="${compiler.args.xrt_uiprototyper}"/>
+      <bootclasspath refid="xrt_uiprototyper.module.bootclasspath"/>
+      <classpath refid="xrt_uiprototyper.module.classpath"/>
+      <src refid="xrt_uiprototyper.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.xrt_uiprototyper"/>
+    </javac>
+    
+    <copy todir="${xrt_uiprototyper.testoutput.dir}">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/tests/testSrc">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.xrt_uiprototyper" description="cleanup module">
+    <delete dir="${xrt_uiprototyper.output.dir}"/>
+    <delete dir="${xrt_uiprototyper.testoutput.dir}"/>
+  </target>
+  
+  <property name="xrt_uiprototyper.plugin.path.jar" value="${module.xrt_uiprototyper.basedir}/xrt_UIPrototyper.zip"/>
+  
+  <!-- Build archive for plugin 'xrt_UIPrototyper' -->
+  <target name="plugin.build.jar.xrt_uiprototyper" depends="compile.module.xrt_uiprototyper" description="Build plugin archive for module &#39;xrt_UIPrototyper&#39;">
+
+    <unzip src="${env.IDEA_HOME}/lib/forms_rt.jar" dest="${module.xrt_uiprototyper.basedir}/out/production/forms_rt">
+      <patternset>
+        <include name="com/intellij/uiDesigner/core/"/>
+      </patternset>
+    </unzip>
+
+    <property name="tmp.dir.xrt_uiprototyper" value="${module.xrt_uiprototyper.basedir}/../temp"/>
+    <mkdir dir="${tmp.dir.xrt_uiprototyper}"/>
+    <mkdir dir="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper"/>
+    <mkdir dir="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib"/>
+    <jar destfile="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/xrt_UIPrototyper.jar" duplicate="preserve">
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/xrt_UIPrototyper"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/android-annotations"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/builder-model"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/common"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/dvlib"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/forms_rt"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/layoutlib-api"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/sdk-common"/>
+      <zipfileset dir="${module.xrt_uiprototyper.basedir}/out/production/sdklib"/>
+      <zipfileset file="${module.xrt_uiprototyper.basedir}/META-INF/plugin.xml" prefix="META-INF"/>
+      <manifest>
+        <attribute name="Created-By" value="IntelliJ IDEA"/>
+        <attribute name="Manifest-Version" value="1.0"/>
+      </manifest>
+    </jar>
+    <!--
+    <copy file="${module.uiprototyper.basedir}/lib/lombok-ast-0.2.3.jar" tofile="${tmp.dir.uiprototyper}/lib/lombok-ast-0.2.3.jar"/>
+    <copy file="${module.uiprototyper.basedir}/lib/jarutils.jar" tofile="${tmp.dir.uiprototyper}/lib/jarutils.jar"/>
+    <copy file="${module.uiprototyper.basedir}/lib/freemarker-2.3.20.jar" tofile="${tmp.dir.uiprototyper}/lib/freemarker-2.3.20.jar"/>
+    <copy file="${module.uiprototyper.basedir}/lib/netty-all-4.1.0.Beta4.jar" tofile="${tmp.dir.uiprototyper}/lib/netty-all-4.1.0.Beta4.jar"/>
+    <copy file="${env.IDEA_HOME}/lib/forms_rt.jar" tofile="${tmp.dir.xrt_uiprototyper}/lib/forms_rt.jar"/>
+    -->
+    <copy file="${module.xrt_uiprototyper.basedir}/lib/builder-model-1.1.0-rc1.jar" tofile="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/builder-model-1.1.0-rc1.jar"/>
+    <copy file="${module.xrt_uiprototyper.basedir}/lib/commons-compress-1.0.jar" tofile="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/commons-compress-1.0.jar"/>
+    <copy file="${module.xrt_uiprototyper.basedir}/lib/kxml2-2.3.0.jar" tofile="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/kxml2-2.3.0.jar"/>
+    <copy todir="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/custom_elements">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/resources/custom_elements"/>
+    </copy>
+    <copy todir="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/device-art-resources">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/resources/device-art-resources"/>
+    </copy>
+    <copy todir="${tmp.dir.xrt_uiprototyper}/xrt_UIPrototyper/lib/uiProperties">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/resources/uiProperties"/>
+    </copy>
+    <zip destfile="${xrt_uiprototyper.plugin.path.jar}">
+      <fileset dir="${module.xrt_uiprototyper.basedir}/../temp"/>
+    </zip>
+    <delete dir="${tmp.dir.xrt_uiprototyper}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.android-annotations, clean.module.layoutlib-api, clean.module.builder-model, clean.module.common, clean.module.dvlib, clean.module.sdklib, clean.module.sdk-common, clean.module.xrt_uiprototyper" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.android-annotations, compile.module.layoutlib-api, compile.module.builder-model, compile.module.common, compile.module.dvlib, compile.module.sdklib, compile.module.sdk-common, plugin.build.jar.xrt_uiprototyper" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_builder-model" default="compile.module.builder-model">
+  <dirname property="module.builder-model.basedir" file="${ant.file.module_builder-model}"/>
+  
+  <property name="module.jdk.home.builder-model" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.builder-model" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.builder-model" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.builder-model" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="builder-model.output.dir" value="${module.builder-model.basedir}/../../out/production/builder-model"/>
+  <property name="builder-model.testoutput.dir" value="${module.builder-model.basedir}/../../out/test/builder-model"/>
+  
+  <path id="builder-model.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="builder-model.module.production.classpath">
+    <path refid="${module.jdk.classpath.builder-model}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="builder-model.runtime.production.module.classpath">
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="builder-model.module.classpath">
+    <path refid="${module.jdk.classpath.builder-model}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  <path id="builder-model.runtime.module.classpath">
+    <pathelement location="${builder-model.testoutput.dir}"/>
+    <pathelement location="${builder-model.output.dir}"/>
+    <pathelement location="${android-annotations.testoutput.dir}"/>
+    <pathelement location="${android-annotations.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.builder-model">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.builder-model">
+    <patternset refid="excluded.from.module.builder-model"/>
+  </patternset>
+  
+  <path id="builder-model.module.sourcepath">
+    <dirset dir="${module.builder-model.basedir}/../../builder-model">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.builder-model" depends="compile.module.builder-model.production,compile.module.builder-model.tests" description="Compile module builder-model"/>
+  
+  <target name="compile.module.builder-model.production" depends="register.custom.compilers,compile.module.android-annotations" description="Compile module builder-model; production classes">
+    <mkdir dir="${builder-model.output.dir}"/>
+    <javac2 destdir="${builder-model.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.builder-model}/javac">
+      <compilerarg line="${compiler.args.builder-model}"/>
+      <bootclasspath refid="builder-model.module.bootclasspath"/>
+      <classpath refid="builder-model.module.production.classpath"/>
+      <src refid="builder-model.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.builder-model"/>
+    </javac2>
+    
+    <copy todir="${builder-model.output.dir}">
+      <fileset dir="${module.builder-model.basedir}/../../builder-model/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.builder-model.tests" depends="register.custom.compilers,compile.module.builder-model.production" description="compile module builder-model; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.builder-model" description="cleanup module">
+    <delete dir="${builder-model.output.dir}"/>
+    <delete dir="${builder-model.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<devices>
+  <!-- custom INDE skin -->
+  <device id="intel_iphone4s" name="Intel IPhone 4S">
+    <orientation name="port" size="837,1533" screenPos="83,274" screenSize="640,960" back="port_back.png" lights="port_fore.png"/>
+    <orientation name="land" size="1596,872" screenPos="285,98" screenSize="960,640" back="land_back.png" lights="land_fore.png"/>
+  </device>
+  <device id="intel_iphone5" name="Intel IPhone 5">
+    <orientation name="port" size="808,1630" screenPos="79,249" screenSize="640,1136" back="port_back.png" lights="port_fore.png"/>
+    <orientation name="land" size="1642,802" screenPos="248,74" screenSize="1136,640" back="land_back.png" lights="land_fore.png"/>
+  </device>
+  <device id="intel_iphone5s" name="Intel IPhone 5S">
+    <orientation name="port" size="808,1630" screenPos="79,249" screenSize="640,1136" back="port_back.png" lights="port_fore.png"/>
+    <orientation name="land" size="1642,802" screenPos="248,74" screenSize="1136,640" back="land_back.png" lights="land_fore.png"/>
+  </device>
+
+  <device id="intel_iphone6" name="Intel IPhone 6">
+    <orientation name="port" size="873,1762" screenPos="61,214" screenSize="750,1334" back="port_back.png" lights="port_fore.png"/>
+    <orientation name="land" size="1812,940" screenPos="234,93" screenSize="1334,750" back="land_back.png" lights="land_fore.png"/>
+  </device>
+
+  <device id="intel_iphone6Plus" name="Intel IPhone 6Plus">
+    <orientation name="port" size="1253,2525" screenPos="87,303" screenSize="1080,1920" back="port_back.png" lights="port_fore.png"/>
+    <orientation name="land" size="2604,1348" screenPos="334,135" screenSize="1920,1080" back="land_back.png" lights="land_fore.png"/>
+  </device>
+
+  <device id="intel_ipadAir2" name="Intel IPad Air2">
+    <orientation name="port" size="1836,2560" screenPos="141,253" screenSize="1536,2048" back="port_back.png" lights="port_fore.png"/>
+    <orientation name="land" size="2596,1848" screenPos="245,141" screenSize="2048,1536" back="land_back.png" lights="land_fore.png"/>
+  </device>
+
+</devices>

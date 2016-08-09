@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<meta-model>
+
+  <!-- ================= Roots ================= -->
+
+  <meta model="org.moe.designer.model.RadViewComponent"
+        layout="org.moe.designer.model.RadSingleChildrenViewLayout"
+        tag="&lt;root&gt;"
+        delete="false">
+
+    <palette title="Device Screen" icon="AndroidIcons.Views.DeviceScreen"/>
+  </meta>
+
+  <meta model="org.moe.designer.model.RadViewComponent"
+        tag="merge"
+        delete="false">
+
+    <palette title="Device Screen (#merge)" icon="AndroidIcons.Views.Merge"/>
+  </meta>
+
+  <!--<meta model="com.intellij.android.designer.model.RadRequestFocus"-->
+        <!--class="java.lang.Object"-->
+        <!--tag="requestFocus">-->
+
+    <!--<palette title="requestFocus" icon="AndroidIcons.Views.RequestFocus"-->
+             <!--tooltip="Requests focus for the parent element or one of its descendants."/>-->
+
+    <!--<creation>-->
+      <!--<![CDATA[-->
+          <!--<requestFocus />-->
+      <!--]]>-->
+    <!--</creation>-->
+
+  <!--</meta>-->
+
+  <!--<meta model="com.intellij.android.designer.model.RadIncludeLayout"-->
+        <!--class="java.lang.Object"-->
+        <!--tag="include">-->
+
+    <!--<presentation title=" - %layout:xml%"/>-->
+
+    <!--<palette title="&lt;include&gt;" icon="AndroidIcons.Views.Include"-->
+             <!--tooltip="Lets you statically include XML layout inside other XML layouts."/>-->
+
+    <!--<properties inplace="layout:xml"/>-->
+  <!--</meta>-->
+
+  <!--<meta model="com.intellij.android.designer.model.RadFragment"-->
+        <!--class="java.lang.Object"-->
+        <!--tag="fragment"-->
+        <!--fill="opposite">-->
+
+    <!--<presentation title=" - %name%"/>-->
+
+    <!--<palette title="&lt;fragment&gt;" icon="AndroidIcons.Views.Fragment"-->
+             <!--tooltip="A Fragment is a piece of an application's user interface or behavior that can be placed in an Activity."/>-->
+
+    <!--<properties inplace="name"/>-->
+  <!--</meta>-->
+
+
+  <!--<meta model="com.intellij.android.designer.model.RadCustomViewComponent"-->
+        <!--tag="view">-->
+    <!--<palette title="CustomView" icon="AndroidIcons.Views.Unknown"/>-->
+  <!--</meta>-->
+
+  <!--<meta class="android.view.View">-->
+    <!--<properties-->
+        <!--important="id background"-->
+        <!--expert="tag scrollX scrollY fitsSystemWindows scrollbars scrollbarStyle isScrollContainer fadeScrollbars scrollbarFadeDuration scrollbarDefaultDelayBeforeFade scrollbarSize scrollbarThumbHorizontal scrollbarThumbVertical scrollbarTrackHorizontal scrollbarTrackVertical scrollbarAlwaysDrawHorizontalTrack scrollbarAlwaysDrawVerticalTrack fadingEdge requiresFadingEdge fadingEdgeLength nextFocusLeft nextFocusRight nextFocusUp nextFocusDown nextFocusForward saveEnabled filterTouchesWhenObscured drawingCacheQuality keepScreenOn duplicateParentState soundEffectsEnabled hapticFeedbackEnabled overScrollMode translationX translationY transformPivotX transformPivotY rotation rotationX rotationY scaleX scaleY verticalScrollbarPosition layerType layoutDirection textDirection"-->
+        <!--/>-->
+  <!--</meta>-->
+
+  <!--<meta class="android.view.ViewGroup">-->
+    <!--<properties-->
+        <!--expert="layout:margin.start layout:margin.end animateLayoutChanges clipChildren clipToPadding layoutAnimation animationCache persistentDrawingCache alwaysDrawnWithCache addStatesFromChildren descendantFocusability splitMotionEvents"-->
+        <!--/>-->
+  <!--</meta>-->
+
+  <!-- ================= Base Widgets ================= -->
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadLinearLayout"
+          class="com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout"
+          tag="com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout"
+          fill="opposite">
+
+        <presentation title=" (%orientation%)"/>
+
+        <palette title="LinearLayout" icon="IOSDesignerIcons.iOSLinearLayoutVertical"
+                 tooltip="A Layout that arranges its children in a single row or column."/>
+
+
+        <creation>
+            <![CDATA[
+          <com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout>
+      ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadNavigationController"
+          class="com.android.sdklib.widgets.base_elements.iOSNavigationBarContainer"
+          tag="com.android.sdklib.widgets.base_elements.iOSNavigationBarContainer"
+          fill="opposite">
+
+        <presentation title=" (%orientation%)"/>
+
+        <palette title="NavigationBar Container" icon="AndroidIcons.Views.LinearLayout"
+                 tooltip="A Layout that arranges its children in a single row or column."/>
+
+
+        <creation>
+            <![CDATA[
+          <com.android.sdklib.widgets.base_elements.iOSNavigationBarContainer
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.base_elements.iOSNavigationBarContainer>
+      ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadNavigationViewContainer"
+          layout="org.moe.designer.model.layout.RadNavigationController"
+          class="com.android.sdklib.widgets.iOSNavigationController"
+          tag="com.android.sdklib.widgets.iOSNavigationController"
+          fill="opposite">
+
+        <presentation title=" (%orientation%)"/>
+
+        <palette title="Navigation Controller" icon="AndroidIcons.Views.LinearLayout"
+                 tooltip="A Layout that arranges its children in a single row or column."/>
+
+
+        <creation>
+            <![CDATA[
+          <com.android.sdklib.widgets.iOSNavigationController
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.iOSNavigationController>
+      ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadNavigationViewContainer"
+          layout="org.moe.designer.model.layout.RadLinearLayout"
+          class="com.android.sdklib.widgets.iOSViewController"
+          tag="com.android.sdklib.widgets.iOSViewController"
+          fill="opposite">
+
+        <presentation title=" (%orientation%)"/>
+
+        <palette title="View Controller" icon="IOSDesignerIcons.iOSLinearLayoutVertical"
+                 tooltip="A Layout that arranges its children in a single row or column."/>
+
+        <creation>
+            <![CDATA[
+          <com.android.sdklib.widgets.iOSViewController
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.iOSViewController>
+      ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadNavigationViewContainer"
+          layout="org.moe.designer.model.layout.TableViewController"
+          class="com.android.sdklib.widgets.iOSTableViewController"
+          tag="com.android.sdklib.widgets.iOSTableViewController"
+          fill="opposite">
+
+        <presentation title=" (%orientation%)"/>
+
+        <palette title="TableView Controller" icon="AndroidIcons.Views.LinearLayout"
+                 tooltip="A Layout that arranges its children in a single row or column."/>
+
+        <creation>
+            <![CDATA[
+              <com.android.sdklib.widgets.iOSTableViewController
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+              </com.android.sdklib.widgets.iOSTableViewController>
+            ]]>
+        </creation>
+    </meta>
+
+
+    <meta model="org.moe.designer.model.layout.relative.RadRelativeLayoutComponent"
+          layout="org.moe.designer.model.layout.relative.RadRelativeLayout"
+          class="com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout"
+          tag="com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout"
+          fill="both">
+
+        <palette title="RelativeLayout" icon="AndroidIcons.Views.RelativeLayout"
+                 tooltip="A Layout where the positions of the children can be described in relation to each other or to the parent."/>
+
+        <creation>
+            <![CDATA[
+          <com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout>
+      ]]>
+        </creation>
+    </meta>
+
+
+    <!-- =====================================iOS Custom elements===============================================-->
+    <meta model="org.moe.designer.model.RadViewComponent"
+        class="com.android.sdklib.widgets.iOSButton"
+        tag="com.android.sdklib.widgets.iOSButton">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Button" icon="IOSDesignerIcons.iOSButton"
+                 tooltip="Represents a push-button widget."/>
+
+        <properties important="events"/>
+
+        <creation>
+          <![CDATA[
+              <com.android.sdklib.widgets.iOSButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="Button"
+                android:layout_gravity="left"
+                style="@style/XOSButton"
+              />
+          ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSTextView"
+          tag="com.android.sdklib.widgets.iOSTextView">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Label" icon="IOSDesignerIcons.iOSLabel"
+                 tooltip="Displays text to the user and optionally allows them to edit it."/>
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSTextView
+                style="@style/XOSLabel"
+                android:textSize="15dp"
+                android:text="Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSTextPicker"
+          tag="com.android.sdklib.widgets.iOSTextPicker">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Picker" icon="IOSDesignerIcons.iOSPicker"
+                 tooltip="Displays a spinning-wheel or slot-machine motif of values."/>
+
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSTextPicker
+                          android:layout_width="150dp"
+                          android:layout_height="150dp"
+                          android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSStepper"
+          tag="com.android.sdklib.widgets.iOSStepper">
+
+        <palette title="Stepper" icon="IOSDesignerIcons.iOSStepper"
+                 tooltip="Provides a user interface for incrementing or decrementing value."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSStepper
+                    android:layout_width="94dp"
+                    android:layout_height="34dp"
+                    style="@style/XOSStepper_RadioGroup"
+                    android:layout_gravity="left">
+            </com.android.sdklib.widgets.iOSStepper>
+        ]]>
+        </creation>
+
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSSwitch"
+          tag="com.android.sdklib.widgets.iOSSwitch">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Switch" icon="IOSDesignerIcons.iOSSwitch"
+                 tooltip="Displays an element showing the boolean state of a value."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSSwitch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/XOSSwitch"
+                    android:checked="true"
+                    android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSTextField"
+          tag="com.android.sdklib.widgets.iOSTextField">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Text Field" icon="IOSDesignerIcons.iOSTextField"
+                 tooltip="Displays editable text and sends an action message to a target object when Return is tapped."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSTextField
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Text"
+                    android:textSize="15dp"
+                    style="@style/XOSTextField"
+                    android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSProgressView"
+          tag="com.android.sdklib.widgets.iOSProgressView">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Progress View" icon="IOSDesignerIcons.iOSProgressView"
+                 tooltip="Depicts the progress of the task over time"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSProgressView
+                        style="@style/XOSProgressView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="50"
+                        android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSActivityIndicator"
+          tag="com.android.sdklib.widgets.iOSActivityIndicator">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Activity Indicator View" icon="IOSDesignerIcons.iOSActivityIndicatorView"
+                 tooltip="Provides feedback on the progress of a task or process of unknown duration."/>
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSActivityIndicator
+                    style="@style/XOSActivityIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSSlider"
+          tag="com.android.sdklib.widgets.iOSSlider">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Slider" icon="IOSDesignerIcons.iOSSlider"
+                 tooltip="Displays a continuous range of values and allows the selection of a single view."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSSlider
+                        style = "@style/XOSSlider"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:progress="50"
+                        android:max="100"
+                        android:indeterminate="false"
+                        android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSDatePicker"
+          tag="com.android.sdklib.widgets.iOSDatePicker">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Date Picker" icon="IOSDesignerIcons.iOSDatePicker"
+                 tooltip="Displays multiple rotating wheels to allow user to select dates and times."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSDatePicker
+                      android:layout_width="wrap_content"
+                      android:layout_height="150dp"
+                      style="@style/XOSDatePicker"
+                      android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+        <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSMapKitView"
+          tag="com.android.sdklib.widgets.iOSMapKitView">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="MapKit View" icon="IOSDesignerIcons.iOSMapKitView"
+                 tooltip="Displays maps and provides an embeddable interface to navigate map content."/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSMapKitView
+                      android:layout_width="wrap_content"
+                      android:layout_height="150dp"
+                      style="@style/XOSMapKitView"
+                      android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSWebView"
+          tag="com.android.sdklib.widgets.iOSWebView">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Web View" icon="IOSDesignerIcons.WebView"
+                 tooltip="Displays web pages."/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSWebView
+                      android:layout_width="wrap_content"
+                      android:layout_height="150dp"
+                      style="@style/XOSWebView"
+                      android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+
+
+
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadLinearLayout"
+          class="com.android.sdklib.widgets.iOSImageView"
+          tag="com.android.sdklib.widgets.iOSImageView"
+          fill="opposite">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Image View" icon="IOSDesignerIcons.iOSImageView"
+                 tooltip="Displays a single image or an animation described by an array of images."/>
+
+
+        <creation>
+            <![CDATA[
+          <com.android.sdklib.widgets.iOSImageView
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.iOSImageView>
+      ]]>
+        </creation>
+    </meta>
+
+
+
+
+    <!--================================Navigation Bar==================================-->
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSUnEditableNavigationBar"
+          tag="com.android.sdklib.widgets.iOSUnEditableNavigationBar">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Navigation Bar" icon="AndroidIcons.GradleConsole"
+                 tooltip="Provides a mechanism for displaying a navigation bar just bellow the status bar."/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSUnEditableNavigationBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/XOSNavigationBar"
+                        android:layout_weight="1"/>
+        ]]>
+        </creation>
+    </meta>
+
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSNavigationBar"
+          tag="com.android.sdklib.widgets.iOSNavigationBar">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Navigation Bar" icon="AndroidIcons.GradleConsole"
+                 tooltip="Provides a mechanism for displaying a navigation bar just bellow the status bar."/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSNavigationBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/XOSNavigationBar"
+                        android:layout_weight="1">
+
+                        <com.android.sdklib.widgets.iOSNavigationBarTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#000000"
+                                android:textSize="20dp"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Title"
+                                android:layout_weight="1"/>
+
+                </com.android.sdklib.widgets.iOSNavigationBar>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSNavigationBarTextView"
+          tag="com.android.sdklib.widgets.iOSNavigationBarTextView">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Navigation Title" icon="AndroidIcons.Views.TextView"
+                 tooltip="Represents a state of the navigation bar, including a title."/>
+
+        <creation>
+            <![CDATA[
+                    <com.android.sdklib.widgets.iOSNavigationBarTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Title"
+                            android:layout_weight="1"/>
+        ]]>
+        </creation>
+    </meta>
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSNavigationBarButton"
+          tag="com.android.sdklib.widgets.iOSNavigationBarButton">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Navigation Item" icon="AndroidIcons.Views.Button"
+                 tooltip="Represents a state of the navigation bar, including a title."/>
+
+        <properties important="iboutlet"/>
+
+        <creation>
+            <![CDATA[
+                    <com.android.sdklib.widgets.iOSNavigationBarButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Item"
+                            style="@style/XOSBarButtonItem"
+                            android:layout_weight="1"
+                            />
+        ]]>
+        </creation>
+    </meta>
+    <!--================================Navigation Bar End==================================-->
+
+
+    <!--================================Segment Control==================================-->
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadRadioGroupLayout"
+          class="com.android.sdklib.widgets.iOSSegmentedControl"
+          tag="com.android.sdklib.widgets.iOSSegmentedControl">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Segmented Control" icon="IOSDesignerIcons.iOSSegmentedControl"
+                 tooltip="Displays multiple segments, each of which functions as a discrete button."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSSegmentedControl
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/XOSSegmentedControl_RadioGroup"
+                        android:layout_gravity="left">
+
+
+                        <com.android.sdklib.widgets.iOSRadioButtonSC
+                            style="@style/XOSSegmentedControl_RadioButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="First"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"/>
+
+                        <com.android.sdklib.widgets.iOSRadioButtonSC
+                            style="@style/XOSSegmentedControl_RadioButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Second"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"/>
+
+                </com.android.sdklib.widgets.iOSSegmentedControl>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSRadioButtonSC"
+          tag="com.android.sdklib.widgets.iOSRadioButtonSC">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Segmented Control Button" icon="IOSDesignerIcons.iOSSegmentedControlButton"
+                 tooltip=""/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSRadioButtonSC
+                            style="@style/XOSSegmentedControl_RadioButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"/>
+        ]]>
+        </creation>
+    </meta>
+    <!--================================Segment Control End==================================-->
+
+    <!--================================Page Control==================================-->
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadRadioGroupLayout"
+          class="com.android.sdklib.widgets.iOSPageControlGroup"
+          tag="com.android.sdklib.widgets.iOSPageControlGroup">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Page Control" icon="IOSDesignerIcons.iOSPageControl"
+                 tooltip="Displays a dot for each open page in an application and supports sequential navigation through the pages."/>
+
+        <properties important="events"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSPageControlGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/XOSPageControlGroup"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.android.sdklib.widgets.iOSPageControlButton
+                        style="@style/XOSPageControlDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"/>
+
+                        <com.android.sdklib.widgets.iOSPageControlButton
+                        style="@style/XOSPageControlDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                        <com.android.sdklib.widgets.iOSPageControlButton
+                        style="@style/XOSPageControlDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </com.android.sdklib.widgets.iOSPageControlGroup>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSPageControlButton"
+          tag="com.android.sdklib.widgets.iOSPageControlButton">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Page Control Button" icon="IOSDesignerIcons.iOSPageControlButton"
+                 tooltip=""/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSPageControlButton
+                        style="@style/XOSPageControlDot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+        ]]>
+        </creation>
+    </meta>
+    <!--================================Page Control End==================================-->
+
+    <!--================================Search view==================================-->
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSSearchBar"
+          tag="com.android.sdklib.widgets.iOSSearchBar">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Search Bar" icon="IOSDesignerIcons.iOSSearchBar"
+                 tooltip="Displays an editable search bar, containing the search icon, that sends an action message to a target object when Return is tapped."/>
+
+        <creation>
+            <![CDATA[
+                 <com.android.sdklib.widgets.iOSSearchBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    style="@style/XOSSearchBar"
+                    android:layout_gravity="left"/>
+        ]]>
+        </creation>
+    </meta>
+    <!--================================Search view end==================================-->
+
+    <!--================================Tool Bar==================================-->
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadLinearLayout"
+          class="com.android.sdklib.widgets.iOSToolBar"
+          tag="com.android.sdklib.widgets.iOSToolBar">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Toolbar" icon="IOSDesignerIcons.iOSToolbar"
+                 tooltip="Provides a mechanism for displaying a toolbar an the bottom of the screen."/>
+
+        <creation>
+            <![CDATA[
+                    <com.android.sdklib.widgets.iOSToolBar
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/XOSToolbar"
+                            android:layout_gravity="left">
+                            <com.android.sdklib.widgets.iOSBarButtonItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Item"
+                                style="@style/XOSBarButtonItem"/>
+                    </com.android.sdklib.widgets.iOSToolBar>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSBarButtonItem"
+          tag="com.android.sdklib.widgets.iOSBarButtonItem">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Toolbar Item" icon="IOSDesignerIcons.iOSToolbarItem"
+                 tooltip=""/>
+
+        <properties important="events iboutlet"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSBarButtonItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    style="@style/XOSBarButtonItem"/>
+        ]]>
+        </creation>
+    </meta>
+    <!--================================Tool Bar End==================================-->
+
+    <!--================================Tab Bar=======================================-->
+    <meta model="org.moe.designer.model.RadViewContainer"
+          layout="org.moe.designer.model.layout.RadRadioGroupLayout"
+          class="com.android.sdklib.widgets.iOSTabBar"
+          tag="com.android.sdklib.widgets.iOSTabBar">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Tab Bar" icon="IOSDesignerIcons.iOSTabBar"
+                 tooltip="Provides a mechanism for displaying a tabs at the bottom of the screen."/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSTabBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/XOSTabBar"
+                        android:layout_gravity="left">
+                    <com.android.sdklib.widgets.iOSTabBarItem
+                            android:drawableTop="@drawable/ios_favorite"
+                            style="@style/XOSTabBarItem"
+                            android:text="Favorites"
+                            android:layout_gravity="left"/>
+                    <com.android.sdklib.widgets.iOSTabBarItem
+                            android:drawableTop="@drawable/ios_dot_more"
+                            style="@style/XOSTabBarItem"
+                            android:text="More"
+                            android:layout_gravity="left"/>
+                </com.android.sdklib.widgets.iOSTabBar>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSTabBarItem"
+          tag="com.android.sdklib.widgets.iOSTabBarItem">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Tab Bar Item" icon="IOSDesignerIcons.iOSTabBarItem"
+                 tooltip="Represents an item on a UITabBar object"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSTabBarItem
+                        android:drawableTop="@drawable/ios_stub_tub_item"
+                        style="@style/XOSTabBarItem"
+                        android:text="Item"/>
+        ]]>
+        </creation>
+    </meta>
+    <!--================================Tab Bar End===================================-->
+
+
+    <!--================================Table View=======================================-->
+    <meta model="org.moe.designer.model.RadTableViewContainer"
+          layout="org.moe.designer.model.layout.RadLinearLayout"
+          class="com.android.sdklib.widgets.iOSTableView"
+          tag="com.android.sdklib.widgets.iOSTableView">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Table View" icon="IOSDesignerIcons.iOSTableView"
+                 tooltip="Displays data in a list of plain, sectioned or grouped rows."/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSTableView
+                      android:orientation="vertical"
+                      android:layout_width="fill_parent"
+                      android:layout_height="fill_parent"
+                      style="@style/XOSTableView"
+                      android:layout_weight="1"
+                      android:layout_gravity="left">
+                        <com.android.sdklib.widgets.iOSTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Prototype Cells"
+                                android:textSize="15dp"
+                                android:textColor="#000000"
+                                android:layout_marginLeft="15dp"
+                                android:textStyle="bold"/>
+
+                        <com.android.sdklib.widgets.iOSTableViewCell
+                                      android:orientation="horizontal"
+                                      android:layout_width="fill_parent"
+                                      android:layout_height="40dp"
+                                      style="@style/XOSTableViewCell">
+
+                        </com.android.sdklib.widgets.iOSTableViewCell>
+
+
+                </com.android.sdklib.widgets.iOSTableView>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewContainer"
+          class="com.android.sdklib.widgets.iOSTableViewCell"
+          layout="org.moe.designer.model.layout.RadLinearLayout"
+          tag="com.android.sdklib.widgets.iOSTableViewCell">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Table View Cell" icon="IOSDesignerIcons.iOSTableViewCell"
+                 tooltip="Defines the attributes and behavior of cells(rows) in a table view."/>
+
+        <properties important="reuseIdentifier iboutlet style restorationIdentifier"/>
+
+        <creation>
+            <![CDATA[
+                <com.android.sdklib.widgets.iOSTableViewCell
+                                android:orientation="horizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="40dp"
+                                style="@style/XOSTableViewCell">
+
+                </com.android.sdklib.widgets.iOSTableViewCell>
+        ]]>
+        </creation>
+    </meta>
+
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSTextView"
+          tag="com.android.sdklib.widgets.iOSTextViewTableCell">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Label" icon="AndroidIcons.Views.TextView"
+                 tooltip=""/>
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prototype Cells"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold"/>
+        ]]>
+        </creation>
+    </meta>
+
+    <meta model="org.moe.designer.model.RadViewComponent"
+          class="com.android.sdklib.widgets.iOSTextView"
+          tag="BaseStyleTitle">
+
+        <presentation title=" - &quot;%text%&quot;"/>
+
+        <palette title="Basic" icon="AndroidIcons.Views.TextView"
+                 tooltip="Displays text to the user and optionally allows them to edit it."/>
+
+        <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.iOSTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        ]]>
+        </creation>
+    </meta>
+
+
+    <!--================================Table View End===================================-->
+
+
+  <!--================= Layouts ================= -->
+
+  <meta model="org.moe.designer.model.RadViewContainer"
+        layout="org.moe.designer.model.layout.RadLinearLayout"
+        class="com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout"
+        tag="LinearLayout"
+        fill="opposite">
+
+    <presentation title=" (%orientation%)"/>
+
+    <palette title="LinearLayout" icon="IOSDesignerIcons.iOSLinearLayoutVertical"
+             tooltip="A Layout that arranges its children in a single row or column."/>
+
+    <morphing to="RadioGroup TableLayout GridLayout RelativeLayout"/>
+
+    <properties inplace="orientation"
+                important="orientation gravity baselineAligned measureWithLargestChild showDividers"
+                expert="layout:gravity.fill layout:gravity.clip layout:gravity.start layout:gravity.end"
+                top="gravity orientation"
+        />
+
+    <creation>
+      <![CDATA[
+          <com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout>
+      ]]>
+    </creation>
+  </meta>
+
+  <meta model="org.moe.designer.model.layout.relative.RadRelativeLayoutComponent"
+        layout="org.moe.designer.model.layout.relative.RadRelativeLayout"
+        class="com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout"
+        tag="RelativeLayout"
+        fill="both">
+
+    <properties important="gravity ignoreGravity"/>
+
+    <palette title="RelativeLayout" icon="AndroidIcons.Views.RelativeLayout"
+             tooltip="A Layout where the positions of the children can be described in relation to each other or to the parent."/>
+
+    <creation>
+      <![CDATA[
+          <com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+          </com.android.sdklib.widgets.base_elements.iOSBaseRelativeLayout>
+      ]]>
+    </creation>
+  </meta>
+
+  <wrap-in>
+    <item tag="LinearLayout"/>
+    <item tag="RelativeLayout"/>
+  </wrap-in>
+
+  <!-- ================= Palette ================= -->
+
+  <palette>
+    <group name="Layouts">
+      <!--&lt;!&ndash;<item tag="FrameLayout"/>&ndash;&gt;-->
+      <item tag="LinearLayout"
+            title="View (Horizontal)"
+            icon="IOSDesignerIcons.iOSLinearLayoutHorizontal"
+            tooltip="A Layout that arranges its children in a single row.">
+        <item title="View (Vertical)"
+              icon="IOSDesignerIcons.iOSLinearLayoutVertical"
+              tooltip="A Layout that arranges its children in a single column.">
+          <creation>
+            <![CDATA[
+            <com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_weight="1">
+            </com.android.sdklib.widgets.base_elements.iOSBaseLinearLayout>
+        ]]>
+          </creation>
+        </item>
+      </item>
+
+      <!--<item tag="RelativeLayout"/>-->
+    </group>
+    <group name="Widgets">
+        <item tag="com.android.sdklib.widgets.iOSButton"/>
+        <item tag="com.android.sdklib.widgets.iOSTextView"/>
+        <item tag="com.android.sdklib.widgets.iOSTextPicker"/>
+        <item tag="com.android.sdklib.widgets.iOSStepper"/>
+        <item tag="com.android.sdklib.widgets.iOSSwitch"/>
+        <item tag="com.android.sdklib.widgets.iOSTextField"/>
+        <item tag="com.android.sdklib.widgets.iOSProgressView"/>
+        <item tag="com.android.sdklib.widgets.iOSActivityIndicator"/>
+        <item tag="com.android.sdklib.widgets.iOSSlider"/>
+        <item tag="com.android.sdklib.widgets.iOSSearchBar"/>
+        <item tag="com.android.sdklib.widgets.iOSImageView"/>
+        <item tag="com.android.sdklib.widgets.iOSDatePicker"/>
+        <item tag="com.android.sdklib.widgets.iOSMapKitView"/>
+        <item tag="com.android.sdklib.widgets.iOSWebView"/>
+    </group>
+    <group name="Segment Control">
+        <item tag="com.android.sdklib.widgets.iOSSegmentedControl"/>
+        <item tag="com.android.sdklib.widgets.iOSRadioButtonSC"/>
+    </group>
+    <group name="Page Control">
+        <item tag="com.android.sdklib.widgets.iOSPageControlGroup"/>
+        <item tag="com.android.sdklib.widgets.iOSPageControlButton"/>
+    </group>
+    <group name="Toolbar">
+        <item tag="com.android.sdklib.widgets.iOSToolBar"/>
+        <item tag="com.android.sdklib.widgets.iOSBarButtonItem"/>
+    </group>
+      <group name="Tab Bar">
+          <item tag="com.android.sdklib.widgets.iOSTabBar"/>
+          <item tag="com.android.sdklib.widgets.iOSTabBarItem"/>
+      </group>
+      <group name="Table View">
+          <item tag="com.android.sdklib.widgets.iOSTableView"/>
+          <item tag="com.android.sdklib.widgets.iOSTableViewCell"/>
+      </group>
+
+  </palette>
+
+</meta-model>

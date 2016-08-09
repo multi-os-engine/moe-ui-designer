@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Event attribute -->
+    <attr name="events">
+        <handler name="Touch Up Inside" int_name="touchUpInside" value="0x20"/>
+        <handler name="Touch Up Outside" int_name="touchUpOutside" value="0x22"/>
+        <handler name="Did End On Exit" int_name="editingDidEndOnExit" value="0x30"/>
+        <handler name="Editing Changed" int_name="editingChanged" value="0x50" />
+        <handler name="Editing Did Begin" int_name="editingDidBegin" value="0x03" />
+        <handler name="Editing Did End" int_name="editingDidEnd" value="0x05" />
+        <handler name="Touch Cancel" int_name="touchCancel" value="0x10" />
+        <handler name="Touch Down" int_name="touchDown" value="0x70" />
+        <handler name="Touch Down Repeat" int_name="touchDownRepeat" value="0x01" />
+        <handler name="Touch Drag Enter" int_name="touchDragEnter" value="0x07" />
+        <handler name="Touch Drag Exit" int_name="touchDragExit" value="0x11" />
+        <handler name="Touch Drag Inside" int_name="touchDragInside" value="0x77" />
+        <handler name="Touch Drag Outside" int_name="touchDragOutside" value="0x80" />
+        <handler name="Value Changed" int_name="valueChanged" value="0x90" />
+    </attr>
+
+    <attr name="segue_type_nav_control">
+        <enum name="relationship" value="1" />
+    </attr>
+
+    <xrt_attr name="style">
+        <enum name="Custom" int_name="" value="1" />
+        <enum name="Basic" int_name="" value="2" />
+        <enum name="RightDetail" int_name="" value="3" />
+        <enum name="LeftDetail" int_name="" value="4" />
+        <enum name="Subtitle" int_name="" value="5" />
+    </xrt_attr>
+
+    <attr name="segue_type">
+        <enum name="show" value="0" />
+        <enum name="show detail" value="1" />
+        <enum name="present modality" value="2" />
+        <enum name="popover presentation" value="3" />
+        <enum name="custom" value="4" />
+    </attr>
+    <attr name="segue_destination" format="string" />
+    <attr name="segue_identifier" format="string" />
+    <attr name="segue"/>
+
+  <declare-styleable name="iOSView">
+        <!-- Defines the alignment of the text. A heuristic is used to determine the resolved
+            text alignment. -->
+        <attr name="textAlignment" />
+  </declare-styleable>
+
+  <declare-styleable name="iOSITextView">
+    <!-- Text to display. -->
+    <attr name="text" format="string" localization="suggested" />
+    <!-- Present the text in ALL CAPS. This may use a small-caps form when available. -->
+    <!-- Text color. -->
+    <attr name="textColor" format="reference|color"/>
+    <!-- Color of the text selection highlight. -->
+    <!-- Style (bold, italic, bolditalic) for the text. -->
+    <attr name="textStyle"/>
+    <!-- Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). -->
+    <attr name="textSize" format="dimension"/>
+  </declare-styleable>
+
+  <declare-styleable name="iOSLinearLayout">
+    <!-- Should the layout be a column or a row?  Use "horizontal"
+         for a row, "vertical" for a column.  The default is
+         horizontal. -->
+      <attr name="orientation" />
+      <attr name="customClass" format="string"/>
+
+  </declare-styleable>
+
+  <declare-styleable name="iOSRelativeLayout">
+  </declare-styleable>
+
+  <declare-styleable name="iOSProgressBar">
+    <!--<attr name="indeterminateBehavior"/>-->
+    <!--&lt;!&ndash; Drawable used for the indeterminate mode. &ndash;&gt;-->
+    <!--<attr name="indeterminateDrawable" format="reference" />-->
+
+    <!--&lt;!&ndash; Defines the maximum value the progress can take. &ndash;&gt;-->
+    <!--<attr name="max" format="integer" />-->
+    <!--&lt;!&ndash; Defines the default progress value, between 0 and max. &ndash;&gt;-->
+    <!--<attr name="progress" format="integer" />-->
+    <!--&lt;!&ndash; Defines the secondary progress value, between 0 and max. This progress is drawn between-->
+         <!--the primary progress and the background.  It can be ideal for media scenarios such as-->
+         <!--showing the buffering progress while the default progress shows the play progress. &ndash;&gt;-->
+    <!--<attr name="secondaryProgress" format="integer" />-->
+
+  </declare-styleable>
+
+  <declare-styleable name="iOSRadioGroup">
+    <!-- The id of the child radio button that should be checked by default
+     within this radio group. -->
+    <attr name="checkedButton" format="integer" />
+    <!-- Should the radio group be a column or a row?  Use "horizontal"
+     for a row, "vertical" for a column.  The default is
+     vertical. -->
+    <attr name="orientation" />
+  </declare-styleable>
+
+  <declare-styleable name="iOSSwitch">
+    <!-- Drawable to use as the "thumb" that switches back and forth. -->
+    <attr name="thumb" />
+    <!-- Drawable to use as the "track" that the switch thumb slides within. -->
+    <attr name="track" format="reference" />
+    <!-- Text to use when the switch is in the checked/"on" state. -->
+    <attr name="textOn" />
+    <!-- Text to use when the switch is in the unchecked/"off" state. -->
+    <attr name="textOff" />
+    <!-- Amount of padding on either side of text within the switch thumb. -->
+    <attr name="thumbTextPadding" format="dimension" />
+    <!-- TextAppearance style for text displayed on the switch thumb. -->
+    <attr name="switchTextAppearance" format="reference" />
+    <!-- Minimum space between the switch and caption text -->
+    <attr name="switchPadding" format="dimension" />
+    <!-- Whether to split the track and leave a gap for the thumb drawable. -->
+    <attr name="splitTrack" />
+    <!-- Whether to draw on/off text. -->
+    <attr name="showText" format="boolean" />
+  </declare-styleable>
+
+    <declare-styleable name="iOSNavigationController">
+        <!-- Segue attr group-->
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSBaseElement">
+        <attr name="iboutlet" format="handler"/>
+        <xrt_attr name="restorationIdentifier" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSBarButtonItem">
+        <xrt_attr name="systemItem" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSButton">
+        <attr name="events"/>
+        <!-- Segue attr group-->
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+
+        <attr name="background" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="iOSTextView">
+        <attr name="background" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="iOSStepper">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSSwitch">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSSlider">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSTextField">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSDatePicker">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSSegmentedControl">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSPageControlGroup">
+        <attr name="events"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSBarButtonItem">
+        <attr name="events"/>
+        <attr name="iboutlet" format="handler"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSPageControlButton">
+        <attr name="iboutlet" format="handler"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSRadioButtonSC">
+        <attr name="iboutlet" format="handler"/>
+        <attr name="text" format="string" localization="suggested" />
+    </declare-styleable>
+
+    <declare-styleable name="iOSTableViewCell">
+        <attr name="iboutlet" format="handler"/>
+        <xrt_attr name="reuseIdentifier" format="string"/>
+        <xrt_attr name="restorationIdentifier" format="string"/>
+
+        <attr name="segue"/>
+        <attr name="segue_type"/>
+        <attr name="segue_destination"/>
+        <attr name="segue_identifier"/>
+        <!--<xrt_attr name="style"/>-->
+    </declare-styleable>
+
+    <declare-styleable name="iOSController">
+        <attr name="initialViewController" format="boolean"/>
+        <xrt_attr name="viewController" format="string"/>
+
+        <xrt_attr name="storyboardIdentifier" format="string"/>
+        <xrt_attr name="restorationIdentifier" format="string"/>
+        <xrt_attr name="useStoryboardIdentifierAsRestorationIdentifier" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="iOSImageView">
+        <!-- A drawable to use as the background.  This can be either a reference
+                     to a full drawable resource (such as a PNG image, 9-patch,
+                     XML state list description, etc), or a solid color such as "#ff000000"
+                    (black). -->
+        <attr name="background" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="iOSBarButtonItem">
+        <attr name="text" format="string" />
+        <attr name="background" format="reference|color" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:layout_gravity="center_horizontal">
+
+    <TextView
+            style = "@style/XOSPickerView_TextView_Row"
+            android:textColor="#787878"
+            android:text="Mountain View"/>
+    <TextView
+            style = "@style/XOSPickerView_TextView_Row"
+            android:textColor="#787878"
+            android:text="Sunnyvale"/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"/>
+    <TextView
+            style = "@style/XOSPickerView_TextView_Row"
+            android:textColor="#000000"
+            android:text="Cupertino"/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"/>
+    <TextView
+            style = "@style/XOSPickerView_TextView_Row"
+            android:textColor="#787878"
+            android:text="Santa Clara"/>
+    <TextView
+            style = "@style/XOSPickerView_TextView_Row"
+            android:textColor="#787878"
+            android:text="San Jose"/>
+
+</LinearLayout>

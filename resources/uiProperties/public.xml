@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+     <public type="attr" name="events"/>
+     <public type="attr" name="iboutlet"/>
+     <public type="attr" name="segue"/>
+     <public type="attr" name="segue_type"/>
+     <public type="attr" name="segue_type_nav_control"/>
+     <public type="attr" name="segue_destination"/>
+     <public type="attr" name="segue_identifier"/>
+     <public type="attr" name="initialViewController"/>
+     <public type="attr" name="viewController"/>
+
+     <public type="attr" name="storyboardIdentifier"/>
+     <public type="attr" name="restorationIdentifier"/>
+     <public type="attr" name="useStoryboardIdentifierAsRestorationIdentifier"/>
+     <public type="attr" name="systemItem"/>
+     <public type="attr" name="reuseIdentifier"/>
+     <public type="attr" name="style"/>
+     <public type="attr" name="customClass"/>
+</resources>
