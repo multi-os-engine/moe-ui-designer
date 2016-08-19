@@ -20,8 +20,8 @@ export PUBLISH_TARGET_REPO_PASS=$repo_pass
 export IDEA_HOME=/Applications/IntelliJ\ IDEA\ 14\ CE.app/Contents/
 
 # replace build version
-cat META-INF/plugin.xml | sed "s/1.0/1.0.$build_number/g" > META-INF/temp.xml
-mv -f META-INF/temp.xml META-INF/plugin.xml
+#cat META-INF/plugin.xml | sed "s/1.0/1.0.$build_number/g" > META-INF/temp.xml
+#mv -f META-INF/temp.xml META-INF/plugin.xml
 
 #run build
 ant

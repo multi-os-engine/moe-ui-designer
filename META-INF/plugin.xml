@@ -1,12 +1,12 @@
 <idea-plugin version="2">
   <id>org.moe.designer.ios</id>
-  <name>Multi-OS Engine Layout Editor for iOS Apps</name>
-  <version>1.0</version>
-  <vendor url="http://www.moe.com">MOE</vendor>
+  <name>Multi-OS Engine UI Designer for iOS</name>
+  <version>1.0.0</version>
+  <vendor url="https://multi-os-engine.org">Multi-OS Engine</vendor>
 
   <description><![CDATA[
-     <h1>Multi-OS Engine Layout Editor for iOS Apps</h1><br>
-     <p>For developers who prefer to save a time by re-using existing code instead of writing a new one</p>
+     <h1>Multi-OS Engine UI Designer for iOS</h1><br>
+     <p>For developers who prefer to save time by re-using existing code instead of writing a new one</p>
     ]]></description>
 
   <!--<change-notes><![CDATA[-->
